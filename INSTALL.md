@@ -52,6 +52,50 @@ The hook only fires when the flag file exists, so installing the plugin changes 
 </details>
 
 <details>
+<summary><strong>Qwen Code</strong></summary>
+
+### Install
+
+```bash
+qwen extensions install ayghri/i-have-adhd
+```
+
+Qwen Code supports the GitHub shorthand and installs the repository as a
+native extension. The extension discovers the skill under `skills/`.
+
+Type `/i-have-adhd` to invoke the skill explicitly. Installing the extension
+does not change output until the skill is invoked, matching the project's
+on-demand behavior in Claude Code and Codex.
+
+### Verify
+
+```bash
+qwen extensions list
+```
+
+Then start a new Qwen Code session and run:
+
+```text
+/skills
+```
+
+Confirm that `i-have-adhd` appears in the list.
+
+### Update
+
+```bash
+qwen extensions update i-have-adhd
+```
+
+### Uninstall
+
+```bash
+qwen extensions uninstall i-have-adhd
+```
+
+</details>
+
+<details>
 <summary><strong>Codex</strong></summary>
 
 ### Install

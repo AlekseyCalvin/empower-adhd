@@ -43,6 +43,18 @@ Then type `$i-have-adhd` to apply the output style explicitly. The skill can als
 
 </details>
 
+<details>
+<summary><strong>Qwen Code</strong></summary>
+
+```bash
+qwen extensions install ayghri/i-have-adhd
+```
+
+Qwen Code discovers the `i-have-adhd` skill from `skills/`. Type
+`/i-have-adhd` to invoke the full skill explicitly.
+
+</details>
+
 Install instructions for other coding agents live in [INSTALL.md](./INSTALL.md).
 
 ## What it does
