@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./logo.png" alt="i-have-adhd" width="140" />
+    <a href="https://github.com/ayghri/i-have-adhd"> <img src="/logo.png" alt="i-have-adhd" width="140" /></a>
 </p>
 <p align="center">
   <strong align="center">ADHD 친화 출력. ADHD 진단은 필요 없어요!</strong>
@@ -9,8 +9,8 @@
 </p>
 
 <p align="center">
-  <a href="README.md">English</a> ·
-  <a href="README.zh-CN.md">简体中文</a> ·
+  <a href="/README.md">English</a> ·
+  <a href="README.zh-CN.md">简体</a> ·
   <a href="README.ja.md">日本語</a> ·
   <strong>한국어</strong> ·
   <a href="README.vi.md">Tiếng Việt</a> ·
@@ -30,7 +30,7 @@ claude plugin install i-have-adhd@i-have-adhd
 
 그리고 `/i-have-adhd` 를 입력하세요. 로컬 클론 없이 Claude Code가 저장소를 가져와 최신 상태로 유지합니다.
 
-모든 세션에서 항상 활성화하고 싶다면 `touch ~/.claude/.i-have-adhd-always` ([INSTALL.md](./INSTALL.md) 참고).
+모든 세션에서 항상 활성화하고 싶다면 `touch ~/.claude/.i-have-adhd-always` ([INSTALL.md](/INSTALL.md) 참고).
 
 </details>
 
@@ -46,7 +46,7 @@ codex plugin add i-have-adhd@i-have-adhd
 
 </details>
 
-다른 코딩 에이전트 설치 방법은 [INSTALL.md](./INSTALL.md) 참고.
+다른 코딩 에이전트 설치 방법은 [INSTALL.md](/INSTALL.md) 참고.
 
 ## 동작 방식
 

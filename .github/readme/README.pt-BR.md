@@ -1,15 +1,15 @@
 <p align="center">
-  <img src="./logo.png" alt="i-have-adhd" width="140" />
+    <a href="https://github.com/ayghri/i-have-adhd"> <img src="/logo.png" alt="i-have-adhd" width="140" /></a>
 </p>
 <p align="center">
   <strong align="center">Respostas amigáveis para quem tem TDAH. Sem precisar de diagnóstico!</strong>
 </p>
 <p align="center">
-  <a href="LICENSE"><img src="https://img.shields.io/github/license/ayghri/i-have-adhd?style=flat" alt="Licença"></a>
+  <a href="/LICENSE"><img src="https://img.shields.io/github/license/ayghri/i-have-adhd?style=flat" alt="Licença"></a>
 </p>
 
 <p align="center">
-  <a href="README.md">English</a> ·
+  <a href="/README.md">English</a> ·
   <a href="README.zh-CN.md">简体中文</a> ·
   <a href="README.ja.md">日本語</a> ·
   <a href="README.ko.md">한국어</a> ·
@@ -30,7 +30,7 @@ claude plugin install i-have-adhd@i-have-adhd
 
 Depois digite `/i-have-adhd`. Não precisa clonar nada localmente: o Claude Code baixa o repositório e o mantém atualizado.
 
-Quer ativar em toda sessão? `touch ~/.claude/.i-have-adhd-always` (veja o [INSTALL.md](./INSTALL.md)).
+Quer ativar em toda sessão? `touch ~/.claude/.i-have-adhd-always` (veja o [INSTALL.md](/INSTALL.md)).
 
 </details>
 
@@ -46,7 +46,7 @@ Depois digite `$i-have-adhd` para aplicar o estilo de resposta explicitamente. A
 
 </details>
 
-As instruções de instalação para outros assistentes de código estão no [INSTALL.md](./INSTALL.md).
+As instruções de instalação para outros assistentes de código estão no [INSTALL.md](/INSTALL.md).
 
 ## O que ela faz
 
@@ -85,7 +85,7 @@ Uma skill para o seu assistente de código que impede que ele enterre a resposta
 
 ## As regras
 
-10 regras. Texto completo no [SKILL.md](./skills/i-have-adhd/SKILL.md).
+10 regras. Texto completo no [SKILL.md](/skills/i-have-adhd/SKILL.md).
 
 1. Comece pela próxima ação.
 2. Numere tarefas de múltiplos passos.
