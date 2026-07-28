@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <a href="/">English</a> ·
+  <a href="/tree/main">English</a> ·
   <strong>简体中文</strong> ·
   <a href="README.ja.md">日本語</a> ·
   <a href="README.ko.md">한국어</a> ·
