@@ -2,7 +2,7 @@
   <img src="./logo.png" alt="i-have-adhd" width="140" />
 </p>
 <p align="center">
-  <strong align="center">Kết quả đầu ra thân thiện với ADHD. Không cần chẩn đoán ADHD!</strong>
+  <strong align="center">Đầu ra thân thiện với người có ADHD. Không cần chẩn đoán ADHD!</strong>
 </p>
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/github/license/ayghri/i-have-adhd?style=flat" alt="Giấy phép"></a>
@@ -41,15 +41,15 @@ codex plugin marketplace add ayghri/i-have-adhd --ref main
 codex plugin add i-have-adhd@i-have-adhd
 ```
 
-Sau đó gõ `$i-have-adhd` để áp dụng phong cách đầu ra này một cách rõ ràng. Skill cũng có thể được tự động kích hoạt khi Codex thấy công việc phù hợp.
+Sau đó, gõ `$i-have-adhd` để chủ động áp dụng phong cách đầu ra này. Skill cũng có thể được Codex tự động gọi khi nhận thấy tác vụ phù hợp.
 
 </details>
 
 Hướng dẫn cài đặt cho các trợ lý lập trình khác có tại [INSTALL.md](./INSTALL.md).
 
-## Tính năng
+## Skill này làm gì
 
-Một skill dành cho trợ lý lập trình giúp nó không chôn vùi câu trả lời trong những đoạn văn dài dòng. Hành động trước. Các bước đánh số. Không câu nệ kiểu "Hy vọng điều này sẽ giúp ích cho bạn!"
+Một skill dành cho trợ lý lập trình, giúp câu trả lời đi thẳng vào trọng tâm thay vì bị chôn vùi trong những đoạn văn dài. Hành động trước. Đánh số các bước. Không có câu “Hy vọng điều này hữu ích!”
 
 
 ## Những gì thay đổi
@@ -61,7 +61,7 @@ Một skill dành cho trợ lý lập trình giúp nó không chôn vùi câu tr
 
 ## Trước khi dùng
 
-> Câu hỏi rất hay! Để tôi suy nghĩ về điều này. Luồng xác thực của bạn có một vài phần di chuyển: middleware, xác thực token và xử lý cookie. Nhìn vào `src/auth.ts`, hàm `verifyToken` (khoảng dòng 42-58) có vẻ đang dùng API `jsonwebtoken` cũ hơn. Một cách tiếp cận là cập nhật package và viết lại hàm đó. Sau khi thay đổi, bạn sẽ muốn chạy các bài kiểm tra xác thực để xác nhận không có gì bị hỏng. Nhân tiện, bạn cũng có thể muốn nhìn vào phiên bản các thư viện phụ thuộc tổng thể. Hy vọng điều này giúp ích! Cho tôi biết nếu bạn muốn đi sâu hơn.
+> Câu hỏi rất hay! Để tôi suy nghĩ về điều này. Luồng xác thực của bạn gồm vài thành phần liên quan: middleware, việc xác minh token và xử lý cookie. Nhìn vào `src/auth.ts`, hàm `verifyToken` (khoảng dòng 42-58) có vẻ đang dùng API `jsonwebtoken` cũ hơn. Một cách tiếp cận là cập nhật package và viết lại hàm đó. Sau khi thay đổi, bạn sẽ muốn chạy các bài kiểm thử phần xác thực để xác nhận không có gì bị hỏng. Nhân tiện, bạn cũng có thể muốn xem xét tổng thể phiên bản các dependency. Hy vọng điều này hữu ích! Cho tôi biết nếu bạn muốn đi sâu hơn.
 
 </td>
 
@@ -87,12 +87,12 @@ Một skill dành cho trợ lý lập trình giúp nó không chôn vùi câu tr
 10 quy tắc. Nội dung chi tiết tại [SKILL.md](./skills/i-have-adhd/SKILL.md).
 
 1. Bắt đầu ngay bằng hành động tiếp theo.
-2. Đánh số các công việc nhiều bước.
+2. Đánh số các công việc gồm nhiều bước.
 3. Kết thúc bằng một bước tiếp theo cụ thể.
 4. Loại bỏ các nội dung lan man.
 5. Nhắc lại trạng thái hiện tại ở mỗi lượt.
 6. Ước tính thời gian cụ thể (tính bằng phút, không nói chung chung).
-7. Hiển thị tiến trình rõ ràng.
+7. Làm nổi bật những kết quả đã đạt được.
 8. Báo lỗi một cách khách quan, thẳng thắn.
 9. Giới hạn danh sách tối đa 5 mục.
 10. Không lời mở đầu. Không tóm tắt. Không lời chào kết.
@@ -112,10 +112,10 @@ Khởi động lại Claude Code, sau đó gọi lại `/i-have-adhd`.
 
 ## Ghi nhận tác giả (Credits)
 
-Dựa trên cuốn sách *The Adult ADHD Tool Kit* của J. Russell Ramsay và Anthony L. Rostain. Được điều chỉnh phù hợp với cách LLM nên phản hồi, thay vì cách con người tự sắp xếp thời gian.
+Lấy cảm hứng một phần từ cuốn *The Adult ADHD Tool Kit* của J. Russell Ramsay và Anthony L. Rostain. Được điều chỉnh cho cách một LLM nên phản hồi, chứ không phải cách con người nên tổ chức một ngày của mình.
 
 ## Giấy phép
 
 MIT.
 
-Bấm ⭐ Star nếu nó giúp bạn tiết kiệm được một lần cuộn trang qua câu "Câu hỏi rất hay!"
+Hãy ⭐ repo nếu nó giúp bạn khỏi phải cuộn qua thêm một câu “Câu hỏi rất hay!”
