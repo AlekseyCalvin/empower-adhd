@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="/logo.png" alt="i-have-adhd" width="140" />
+    <a href="https://github.com/ayghri/i-have-adhd"> <img src="/logo.png" alt="i-have-adhd" width="140" /></a>
 </p>
 <p align="center">
   <strong align="center">对 ADHD 友好的输出。无需确诊 ADHD！</strong>
@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <a href="/tree/main">English</a> ·
+  <a href="/README.md">English</a> ·
   <strong>简体中文</strong> ·
   <a href="README.ja.md">日本語</a> ·
   <a href="README.ko.md">한국어</a> ·

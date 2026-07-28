@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="/logo.png" alt="i-have-adhd" width="140" />
+    <a href="https://github.com/ayghri/i-have-adhd"> <img src="/logo.png" alt="i-have-adhd" width="140" /></a>
 </p>
 <p align="center">
   <strong align="center">ADHD に配慮した出力。ADHD の診断は不要です！</strong>
@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <a href="/tree/main">English</a> ·
+  <a href="/README.md">English</a> ·
   <a href="README.zh-CN.md">简体</a> ·
   <strong>日本語</strong> ·
   <a href="README.ko.md">한국어</a> ·
