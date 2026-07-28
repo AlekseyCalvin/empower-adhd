@@ -1,15 +1,15 @@
 <p align="center">
-  <img src="./logo.png" alt="i-have-adhd" width="140" />
+  <img src="/logo.png" alt="i-have-adhd" width="140" />
 </p>
 <p align="center">
   <strong align="center">ADHD に配慮した出力。ADHD の診断は不要です！</strong>
 </p>
 <p align="center">
-  <a href="LICENSE"><img src="https://img.shields.io/github/license/ayghri/i-have-adhd?style=flat" alt="ライセンス"></a>
+  <a href="/LICENSE"><img src="https://img.shields.io/github/license/ayghri/i-have-adhd?style=flat" alt="ライセンス"></a>
 </p>
 
 <p align="center">
-  <a href="../../README.md">English</a> ·
+  <a href="/">English</a> ·
   <a href="README.zh-CN.md">简体</a> ·
   <strong>日本語</strong> ·
   <a href="README.ko.md">한국어</a> ·
@@ -29,7 +29,7 @@ claude plugin install i-have-adhd@i-have-adhd
 
 続いて `/i-have-adhd` と入力します。ローカルへのクローンは不要です。Claude Code がリポジトリを取得し、最新の状態に保ちます。
 
-すべてのセッションで使いたい場合は、`touch ~/.claude/.i-have-adhd-always` を実行してください（[INSTALL.md](./INSTALL.md) を参照）。
+すべてのセッションで使いたい場合は、`touch ~/.claude/.i-have-adhd-always` を実行してください（[INSTALL.md](/INSTALL.md) を参照）。
 
 </details>
 
@@ -45,7 +45,7 @@ codex plugin add i-have-adhd@i-have-adhd
 
 </details>
 
-その他のコーディングエージェント向けのインストール手順は [INSTALL.md](./INSTALL.md) にあります。
+その他のコーディングエージェント向けのインストール手順は [INSTALL.md](/INSTALL.md) にあります。
 
 ## 機能
 

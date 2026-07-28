@@ -1,15 +1,15 @@
 <p align="center">
-  <img src="./logo.png" alt="i-have-adhd" width="140" />
+  <img src="/logo.png" alt="i-have-adhd" width="140" />
 </p>
 <p align="center">
   <strong align="center">Đầu ra thân thiện với người có ADHD. Không cần chẩn đoán ADHD!</strong>
 </p>
 <p align="center">
-  <a href="LICENSE"><img src="https://img.shields.io/github/license/ayghri/i-have-adhd?style=flat" alt="Giấy phép"></a>
+  <a href="/LICENSE"><img src="https://img.shields.io/github/license/ayghri/i-have-adhd?style=flat" alt="Giấy phép"></a>
 </p>
 
 <p align="center">
-  <a href="../../README.md">English</a> ·
+  <a href="/">English</a> ·
   <a href="README.zh-CN.md">简体</a> ·
   <a href="README.ja.md">日本語</a> ·
   <a href="README.ko.md">한국어</a> ·
@@ -29,7 +29,7 @@ claude plugin install i-have-adhd@i-have-adhd
 
 Sau đó gõ `/i-have-adhd`. Không cần clone về máy: Claude Code sẽ tự tải repo và cập nhật.
 
-Bạn muốn tự động bật trong mọi phiên làm việc? Chạy `touch ~/.claude/.i-have-adhd-always` (xem [INSTALL.md](./INSTALL.md)).
+Bạn muốn tự động bật trong mọi phiên làm việc? Chạy `touch ~/.claude/.i-have-adhd-always` (xem [INSTALL.md](/INSTALL.md)).
 
 </details>
 
@@ -45,7 +45,7 @@ Sau đó, gõ `$i-have-adhd` để chủ động áp dụng phong cách đầu r
 
 </details>
 
-Hướng dẫn cài đặt cho các trợ lý lập trình khác có tại [INSTALL.md](./INSTALL.md).
+Hướng dẫn cài đặt cho các trợ lý lập trình khác có tại [INSTALL.md](/INSTALL.md).
 
 ## Skill này làm gì
 

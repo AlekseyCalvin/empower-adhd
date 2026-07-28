@@ -29,7 +29,7 @@ claude plugin install i-have-adhd@i-have-adhd
 
 그리고 `/i-have-adhd` 를 입력하세요. 로컬 클론 없이 Claude Code가 저장소를 가져와 최신 상태로 유지합니다.
 
-모든 세션에서 항상 활성화하고 싶다면 `touch ~/.claude/.i-have-adhd-always` ([INSTALL.md](./INSTALL.md) 참고).
+모든 세션에서 항상 활성화하고 싶다면 `touch ~/.claude/.i-have-adhd-always` ([INSTALL.md](/INSTALL.md) 참고).
 
 </details>
 
@@ -45,7 +45,7 @@ codex plugin add i-have-adhd@i-have-adhd
 
 </details>
 
-다른 코딩 에이전트 설치 방법은 [INSTALL.md](./INSTALL.md) 참고.
+다른 코딩 에이전트 설치 방법은 [INSTALL.md](/INSTALL.md) 참고.
 
 ## 동작 방식
 
