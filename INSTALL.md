@@ -235,76 +235,81 @@ Exceptions: explain fully when asked to explain. Confirm before destructive acti
 <details>
 <summary><strong>Pi</strong></summary>
 
-Pi implements the Agent Skills standard, so the same `SKILL.md` loads directly, no conversion. Pi's invocation differs from the others: skills are called as `/skill:<name>`.
+Pi discovers this repository as a native package: `extensions/` provides the session-persistent mode and `skills/` keeps the Agent Skills entry point available.
 
 ### Install
 
 ```bash
-npx skills add ayghri/i-have-adhd -a pi -y
+pi install https://github.com/ayghri/i-have-adhd
 ```
 
-Prefer the filesystem? Pi discovers skills in `~/.pi/agent/skills/` and `~/.agents/skills/` (global), and `.pi/skills/` and `.agents/skills/` (project):
+Start a new Pi session. Toggle ADHD-friendly output for the current session:
+
+```text
+/i-have-adhd
+```
+
+The footer shows `● ADHD ON` while the mode is active. Run the command again to turn it off, or be explicit:
+
+```text
+/i-have-adhd on
+/i-have-adhd off
+stop adhd mode
+```
+
+Like the Claude Code hook, the extension adds the ruleset to the conversation once instead of rewriting the system prompt on every request, and adds it again after compaction drops it.
+
+The existing Agent Skills command remains available as an alias:
+
+```text
+/skill:i-have-adhd
+```
+
+Start a new Pi session with the mode enabled by default:
 
 ```bash
-git clone https://github.com/ayghri/i-have-adhd
-mkdir -p ~/.pi/agent/skills
-cp -R i-have-adhd/skills/i-have-adhd ~/.pi/agent/skills/
+pi --adhd
 ```
-
-Enable skill slash commands in Pi's `settings.json`:
-
-```json
-{ "enableSkillCommands": true }
-```
-
-Start a new session and type `/skill:i-have-adhd`.
 
 ### Verify
 
 ```bash
-npx skills list
+pi list
 ```
 
-Or type `/skill:` in a session and confirm `i-have-adhd` is listed.
+Confirm the GitHub package is listed, then type `/i-have-adhd` and check that `● ADHD ON` appears in the footer.
 
 ### Update
 
 ```bash
-npx skills update i-have-adhd
+pi update https://github.com/ayghri/i-have-adhd
 ```
 
-Or re-copy the folder after `git pull`.
+Or update every unpinned Pi package with `pi update --extensions`.
 
 ### Uninstall
 
 ```bash
-npx skills remove i-have-adhd
+pi remove https://github.com/ayghri/i-have-adhd
 ```
-
-Or delete `~/.pi/agent/skills/i-have-adhd`.
 
 ### Always-on (optional)
 
-Add to your project `AGENTS.md`:
+Create a flag in Pi's agent configuration directory:
 
-```markdown
-## Output style
-
-The reader has ADHD. Shape every response so it can be acted on:
-
-1. Lead with the answer or next action: command, path, or snippet first.
-2. Number multi-step work; one bounded action per step.
-3. End with one next action doable in under two minutes.
-4. Finish the current issue before raising a new one.
-5. Restate progress each turn ("step 3 of 5 done").
-6. Give time estimates in concrete units, never "a bit".
-7. After a change, show what now works.
-8. Errors: state location, cause, and fix. No drama.
-9. Cap lists at 5 items.
-10. No preamble, no recaps, no closers.
-
-Exceptions: explain fully when asked to explain. Confirm before destructive actions. After three failed fixes, stop and name the doubtful assumption. If the request is ambiguous, ask one short question.
+```bash
+touch ~/.pi/agent/.i-have-adhd-always
 ```
+
+The extension checks the flag at every new, resumed, forked, or reloaded session. A saved choice for the current session wins over this default, so `stop adhd mode` keeps that session disabled.
+
+Back to on-demand:
+
+```bash
+rm ~/.pi/agent/.i-have-adhd-always
+```
+
+If `PI_CODING_AGENT_DIR` is set, put `.i-have-adhd-always` in that directory instead. Run `/reload` or start a new session after changing the flag.
 
 </details>
 
@@ -557,10 +562,10 @@ Exceptions: explain fully when asked to explain. Confirm before destructive acti
 
 ## How activation works
 
-1. **Installed, not invoked.** In Claude Code, nothing happens: `SKILL.md` sets `disable-model-invocation: true`, so the model never sees the skill and never applies the rules on its own. That flag is Claude Code's own; Codex ships with implicit invocation allowed (see the README), and harnesses that implement the open Agent Skills spec load every skill's description at startup and may activate the skill themselves.
-2. **You type `/i-have-adhd`.** Rules on for that session. "stop adhd mode" or "normal mode" turns them off.
-3. **You touch `~/.claude/.i-have-adhd-always`** (Claude Code). A `SessionStart` hook loads the full ruleset from message one, every session.
-4. **You add the always-on snippet above** (other harnesses). Keeps the core rules in your agent's persistent context.
+1. **Installed, not invoked.** In Claude Code, nothing happens because `SKILL.md` sets `disable-model-invocation: true`. Pi's extension is also inert until invoked, restored from session state, started with `--adhd`, or enabled by its flag file. Codex allows implicit invocation, and other Agent Skills harnesses may activate the skill themselves.
+2. **You invoke the mode.** Claude Code uses `/i-have-adhd`; Pi supports `/i-have-adhd` and `/skill:i-have-adhd`; Codex uses `$i-have-adhd`. The rules stay active for that session until "stop adhd mode" or "normal mode".
+3. **You create an always-on flag.** Claude Code uses `~/.claude/.i-have-adhd-always`; Pi uses `~/.pi/agent/.i-have-adhd-always`. Each harness reloads the full ruleset for new sessions while its flag exists.
+4. **You add the always-on snippet above** (other harnesses). This keeps the core rules in the agent's persistent context.
 
 In Claude Code, no middle ground: if you did not turn it on, it is off.
 
@@ -568,7 +573,9 @@ In Claude Code, no middle ground: if you did not turn it on, it is off.
 
 **`/i-have-adhd` not in autocomplete.** Restart the agent. The plugin index is read at startup.
 
-**Always-on flag has no effect.** Update the plugin (`claude plugin marketplace update i-have-adhd`) and restart. Hooks are read at startup, and the flag needs the plugin version that ships `hooks/hooks.json`.
+**Claude Code always-on flag has no effect.** Update the plugin (`claude plugin marketplace update i-have-adhd`) and restart. Hooks are read at startup, and the flag needs the plugin version that ships `hooks/hooks.json`.
+
+**Pi always-on flag has no effect.** Confirm the native package appears in `pi list`, put the flag under the effective Pi agent directory (`~/.pi/agent` or `$PI_CODING_AGENT_DIR`), then run `/reload`.
 
 **`claude plugin marketplace add` fails.** Use the `owner/repo` form. A local path must point at the repo root, not `.claude-plugin/`.
 
