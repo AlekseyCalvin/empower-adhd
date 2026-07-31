@@ -13,7 +13,8 @@
   <a href="README.zh-CN.md">简体</a> ·
   <a href="README.ja.md">日本語</a> ·
   <strong>한국어</strong> ·
-  <a href="README.vi.md">Tiếng Việt</a>
+  <a href="README.vi.md">Tiếng Việt</a> ·
+  <a href="README.pt-BR.md">Português (BR)</a>
 </p>
 
 
