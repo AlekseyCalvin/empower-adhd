@@ -1,26 +1,26 @@
 <p align="center">
-  <img src="/logo.png" alt="i-have-adhd" width="140" />
+  <img src="../../logo.png" alt="i-have-adhd" width="140" />
 </p>
 <p align="center">
   <strong align="center">对 ADHD 友好的输出。无需确诊 ADHD！</strong>
 </p>
 <p align="center">
-  <a href="/LICENSE"><img src="https://img.shields.io/github/license/ayghri/i-have-adhd?style=flat" alt="许可证"></a>
+  <a href="../../LICENSE"><img src="https://img.shields.io/github/license/ayghri/i-have-adhd?style=flat" alt="许可证"></a>
 </p>
 
 <p align="center">
-  <a href="/README.md">🇬🇧</a> ·
-  <strong>🇨🇳</strong> ·
-  <a href="README.pt-BR.md">🇧🇷</a> ·
-  <a href="README.ja.md">🇯🇵</a> ·
-  <a href="README.vi.md">🇻🇳</a> ·
-  <a href="README.ko.md">🇰🇷</a>
+  <a href="../../README.md" title="English" aria-label="English">🇬🇧</a> ·
+  <strong title="简体中文" aria-label="简体中文">🇨🇳</strong> ·
+  <a href="README.pt-BR.md" title="Português (Brasil)" aria-label="Português (Brasil)">🇧🇷</a> ·
+  <a href="README.ja.md" title="日本語" aria-label="日本語">🇯🇵</a> ·
+  <a href="README.vi.md" title="Tiếng Việt" aria-label="Tiếng Việt">🇻🇳</a> ·
+  <a href="README.ko.md" title="한국어" aria-label="한국어">🇰🇷</a>
 </p>
 
 
 ## 安装
 
-🔗 [安装说明](/.github/install/INSTALL.zh-CN.md)
+🔗 [安装说明](../install/INSTALL.zh-CN.md)
 
 ## 功能
 
@@ -59,7 +59,7 @@
 
 ## 规则
 
-共 10 条规则。完整内容见 [SKILL.md](/skills/i-have-adhd/SKILL.md)。
+共 10 条规则。完整内容见 [SKILL.md](../../skills/i-have-adhd/SKILL.md)。
 
 1. 先说下一步行动。
 2. 多步骤任务使用编号。

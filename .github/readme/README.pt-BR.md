@@ -1,26 +1,26 @@
 <p align="center">
-  <img src="/logo.png" alt="i-have-adhd" width="140" />
+  <img src="../../logo.png" alt="i-have-adhd" width="140" />
 </p>
 <p align="center">
   <strong align="center">Respostas amigáveis para quem tem TDAH. Sem precisar de diagnóstico!</strong>
 </p>
 <p align="center">
-  <a href="/LICENSE"><img src="https://img.shields.io/github/license/ayghri/i-have-adhd?style=flat" alt="Licença"></a>
+  <a href="../../LICENSE"><img src="https://img.shields.io/github/license/ayghri/i-have-adhd?style=flat" alt="Licença"></a>
 </p>
 
 <p align="center">
-  <a href="/README.md">🇬🇧</a> ·
-  <a href="README.zh-CN.md">🇨🇳</a> ·
-  <strong>🇧🇷</strong> ·
-  <a href="README.ja.md">🇯🇵</a> ·
-  <a href="README.vi.md">🇻🇳</a> ·
-  <a href="README.ko.md">🇰🇷</a>
+  <a href="../../README.md" title="English" aria-label="English">🇬🇧</a> ·
+  <a href="README.zh-CN.md" title="简体中文" aria-label="简体中文">🇨🇳</a> ·
+  <strong title="Português (Brasil)" aria-label="Português (Brasil)">🇧🇷</strong> ·
+  <a href="README.ja.md" title="日本語" aria-label="日本語">🇯🇵</a> ·
+  <a href="README.vi.md" title="Tiếng Việt" aria-label="Tiếng Việt">🇻🇳</a> ·
+  <a href="README.ko.md" title="한국어" aria-label="한국어">🇰🇷</a>
 </p>
 
 
 ## Instalação
 
-🔗 [Instruções de instalação](/.github/install/INSTALL.pt-BR.md)
+🔗 [Instruções de instalação](../install/INSTALL.pt-BR.md)
 
 ## O que ela faz
 
@@ -59,7 +59,7 @@ Uma skill para o seu assistente de código que impede que ele enterre a resposta
 
 ## As regras
 
-10 regras. Texto completo no [SKILL.md](/skills/i-have-adhd/SKILL.md).
+10 regras. Texto completo no [SKILL.md](../../skills/i-have-adhd/SKILL.md).
 
 1. Comece pela próxima ação.
 2. Numere tarefas de múltiplos passos.

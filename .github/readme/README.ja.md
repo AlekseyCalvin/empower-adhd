@@ -1,26 +1,26 @@
 <p align="center">
-  <img src="/logo.png" alt="i-have-adhd" width="140" />
+  <img src="../../logo.png" alt="i-have-adhd" width="140" />
 </p>
 <p align="center">
   <strong align="center">ADHD に配慮した出力。ADHD の診断は不要です！</strong>
 </p>
 <p align="center">
-  <a href="/LICENSE"><img src="https://img.shields.io/github/license/ayghri/i-have-adhd?style=flat" alt="ライセンス"></a>
+  <a href="../../LICENSE"><img src="https://img.shields.io/github/license/ayghri/i-have-adhd?style=flat" alt="ライセンス"></a>
 </p>
 
 <p align="center">
-  <a href="/README.md">🇬🇧</a> ·
-  <a href="README.zh-CN.md">🇨🇳</a> ·
-  <a href="README.pt-BR.md">🇧🇷</a> ·
-  <strong>🇯🇵</strong> ·
-  <a href="README.vi.md">🇻🇳</a> ·
-  <a href="README.ko.md">🇰🇷</a>
+  <a href="../../README.md" title="English" aria-label="English">🇬🇧</a> ·
+  <a href="README.zh-CN.md" title="简体中文" aria-label="简体中文">🇨🇳</a> ·
+  <a href="README.pt-BR.md" title="Português (Brasil)" aria-label="Português (Brasil)">🇧🇷</a> ·
+  <strong title="日本語" aria-label="日本語">🇯🇵</strong> ·
+  <a href="README.vi.md" title="Tiếng Việt" aria-label="Tiếng Việt">🇻🇳</a> ·
+  <a href="README.ko.md" title="한국어" aria-label="한국어">🇰🇷</a>
 </p>
 
 
 ## インストール
 
-🔗 [インストール手順](/.github/install/INSTALL.ja.md)
+🔗 [インストール手順](../install/INSTALL.ja.md)
 
 ## 機能
 
@@ -59,7 +59,7 @@
 
 ## ルール
 
-ルールは 10 個です。全文は [SKILL.md](/skills/i-have-adhd/SKILL.md) にあります。
+ルールは 10 個です。全文は [SKILL.md](../../skills/i-have-adhd/SKILL.md) にあります。
 
 1. 次に取る行動から始める。
 2. 複数手順のタスクには番号を付ける。

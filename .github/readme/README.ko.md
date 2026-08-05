@@ -1,26 +1,26 @@
 <p align="center">
-  <img src="/logo.png" alt="i-have-adhd" width="140" />
+  <img src="../../logo.png" alt="i-have-adhd" width="140" />
 </p>
 <p align="center">
   <strong align="center">ADHD 친화적인 출력. ADHD 진단은 필요 없어요!</strong>
 </p>
 <p align="center">
-  <a href="/LICENSE"><img src="https://img.shields.io/github/license/ayghri/i-have-adhd?style=flat" alt="License"></a>
+  <a href="../../LICENSE"><img src="https://img.shields.io/github/license/ayghri/i-have-adhd?style=flat" alt="License"></a>
 </p>
 
 <p align="center">
-  <a href="/README.md">🇬🇧</a> ·
-  <a href="README.zh-CN.md">🇨🇳</a> ·
-  <a href="README.pt-BR.md">🇧🇷</a> ·
-  <a href="README.ja.md">🇯🇵</a> ·
-  <a href="README.vi.md">🇻🇳</a> ·
-  <strong>🇰🇷</strong>
+  <a href="../../README.md" title="English" aria-label="English">🇬🇧</a> ·
+  <a href="README.zh-CN.md" title="简体中文" aria-label="简体中文">🇨🇳</a> ·
+  <a href="README.pt-BR.md" title="Português (Brasil)" aria-label="Português (Brasil)">🇧🇷</a> ·
+  <a href="README.ja.md" title="日本語" aria-label="日本語">🇯🇵</a> ·
+  <a href="README.vi.md" title="Tiếng Việt" aria-label="Tiếng Việt">🇻🇳</a> ·
+  <strong title="한국어" aria-label="한국어">🇰🇷</strong>
 </p>
 
 
 ## 설치
 
-🔗 [설치 안내](/.github/install/INSTALL.ko.md)
+🔗 [설치 안내](../install/INSTALL.ko.md)
 
 ## 무슨 일을 하나
 
@@ -59,7 +59,7 @@
 
 ## 규칙
 
-10가지 규칙. 전문은 [SKILL.md](/skills/i-have-adhd/SKILL.md)에 있습니다.
+10가지 규칙. 전문은 [SKILL.md](../../skills/i-have-adhd/SKILL.md)에 있습니다.
 
 1. 다음 행동부터 말하기.
 2. 다단계 작업은 번호로.

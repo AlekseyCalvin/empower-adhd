@@ -558,7 +558,7 @@ Ngoại lệ: giải thích đầy đủ khi được yêu cầu. Xác nhận tr
 </details>
 
 
-## Cách kích hoạt hoạt động
+## Cơ chế kích hoạt
 
 1. **Đã cài nhưng chưa gọi.** Trong Claude Code, không có gì xảy ra: `SKILL.md` đặt `disable-model-invocation: true`, nên model không thấy skill và không tự áp dụng quy tắc. Cờ này là riêng của Claude Code; Codex cho phép gọi ngầm (xem README), còn các môi trường triển khai đặc tả Agent Skills mở sẽ tải mô tả của từng skill khi khởi động và có thể tự kích hoạt.
 2. **Bạn gõ `/i-have-adhd`.** Quy tắc bật trong phiên đó. "stop adhd mode" hoặc "normal mode" sẽ tắt chúng.
