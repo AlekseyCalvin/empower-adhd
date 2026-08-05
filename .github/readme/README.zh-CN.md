@@ -1,5 +1,5 @@
 <p align="center">
-    <a href="https://github.com/ayghri/i-have-adhd"> <img src="/logo.png" alt="i-have-adhd" width="140" /></a>
+  <img src="/logo.png" alt="i-have-adhd" width="140" />
 </p>
 <p align="center">
   <strong align="center">对 ADHD 友好的输出。无需确诊 ADHD！</strong>
@@ -9,44 +9,18 @@
 </p>
 
 <p align="center">
-  <a href="/README.md">English</a> ·
-  <strong>简体中文</strong> ·
-  <a href="README.ja.md">日本語</a> ·
-  <a href="README.ko.md">한국어</a> ·
-  <a href="README.vi.md">Tiếng Việt</a> ·
-  <a href="README.pt-BR.md">Português (BR)</a>
+  <a href="/README.md">🇬🇧</a> ·
+  <strong>🇨🇳</strong> ·
+  <a href="README.pt-BR.md">🇧🇷</a> ·
+  <a href="README.ja.md">🇯🇵</a> ·
+  <a href="README.vi.md">🇻🇳</a> ·
+  <a href="README.ko.md">🇰🇷</a>
 </p>
 
 
 ## 安装
 
-<details>
-<summary><strong>Claude Code</strong></summary>
-
-```bash
-claude plugin marketplace add ayghri/i-have-adhd
-claude plugin install i-have-adhd@i-have-adhd
-```
-
-然后输入 `/i-have-adhd`。无需在本地克隆：Claude Code 会获取该仓库并保持更新。
-
-想在每次会话中都启用它？运行 `touch ~/.claude/.i-have-adhd-always`（参见 [INSTALL.md](/INSTALL.md)）。
-
-</details>
-
-<details>
-<summary><strong>Codex</strong></summary>
-
-```bash
-codex plugin marketplace add ayghri/i-have-adhd --ref main
-codex plugin add i-have-adhd@i-have-adhd
-```
-
-然后输入 `$i-have-adhd`，显式应用这种输出风格。当 Codex 发现某项任务适合使用此技能时，也可以隐式调用它。
-
-</details>
-
-其他编程智能体的安装说明位于 [INSTALL.md](/INSTALL.md)。
+🔗 [安装说明](/.github/install/INSTALL.zh-CN.md)
 
 ## 功能
 

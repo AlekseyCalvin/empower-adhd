@@ -1,4 +1,59 @@
-# Install i-have-adhd
+# How to install
+
+<details>
+<summary><strong>Antigravity (<code>agy</code>)</strong></summary>
+
+### Install
+
+```bash
+agy plugin install https://github.com/ayghri/i-have-adhd
+```
+
+### Verify
+
+```bash
+agy plugin list
+```
+
+### Update
+
+```bash
+agy plugin uninstall i-have-adhd
+agy plugin install https://github.com/ayghri/i-have-adhd
+```
+
+### Uninstall
+
+```bash
+agy plugin uninstall i-have-adhd
+```
+
+Or keep it installed and turn it off: `agy plugin disable i-have-adhd`.
+
+### Always-on (optional)
+
+Add to `~/.gemini/GEMINI.md`:
+
+```markdown
+## Output style
+
+The reader has ADHD. Shape every response so it can be acted on:
+
+1. Lead with the answer or next action: command, path, or snippet first.
+2. Number multi-step work; one bounded action per step.
+3. End with one next action doable in under two minutes.
+4. Finish the current issue before raising a new one.
+5. Restate progress each turn ("step 3 of 5 done").
+6. Give time estimates in concrete units, never "a bit".
+7. After a change, show what now works.
+8. Errors: state location, cause, and fix. No drama.
+9. Cap lists at 5 items.
+10. No preamble, no recaps, no closers.
+
+Exceptions: explain fully when asked to explain. Confirm before destructive actions. After three failed fixes, stop and name the doubtful assumption. If the request is ambiguous, ask one short question.
+```
+
+</details>
 
 <details>
 <summary><strong>Claude Code</strong></summary>
@@ -51,6 +106,7 @@ The hook only fires when the flag file exists, so installing the plugin changes 
 
 </details>
 
+
 <details>
 <summary><strong>Codex</strong></summary>
 
@@ -87,205 +143,6 @@ codex plugin marketplace remove i-have-adhd
 ### Always-on (optional)
 
 Add to `~/.codex/AGENTS.md`:
-
-```markdown
-## Output style
-
-The reader has ADHD. Shape every response so it can be acted on:
-
-1. Lead with the answer or next action: command, path, or snippet first.
-2. Number multi-step work; one bounded action per step.
-3. End with one next action doable in under two minutes.
-4. Finish the current issue before raising a new one.
-5. Restate progress each turn ("step 3 of 5 done").
-6. Give time estimates in concrete units, never "a bit".
-7. After a change, show what now works.
-8. Errors: state location, cause, and fix. No drama.
-9. Cap lists at 5 items.
-10. No preamble, no recaps, no closers.
-
-Exceptions: explain fully when asked to explain. Confirm before destructive actions. After three failed fixes, stop and name the doubtful assumption. If the request is ambiguous, ask one short question.
-```
-
-</details>
-
-<details>
-<summary><strong>Zed</strong></summary>
-
-Zed's Agent reads Agent Skills natively: the same `SKILL.md`, no conversion. (Zed's older "Rules" were replaced by Skills plus `AGENTS.md` instructions.)
-
-### Install
-
-In the Agent Panel, open the Skills manager and choose **Create skill from URL** (also in the command palette as `agent: create skill from url`), then paste:
-
-```
-https://github.com/ayghri/i-have-adhd/blob/main/skills/i-have-adhd/SKILL.md
-```
-
-Save it in **User** scope for every project, or **Project** scope for one. Then type `/i-have-adhd` in the Agent Panel.
-
-Prefer the filesystem? Clone the repo and drop the skill folder into your user skills directory:
-
-```bash
-git clone https://github.com/ayghri/i-have-adhd
-cp -R i-have-adhd/skills/i-have-adhd ~/.config/zed/skills/
-```
-
-### Verify
-
-Open the Skills manager in the Agent Panel and confirm `i-have-adhd` is listed. Or type `/` and confirm it appears.
-
-### Update
-
-Re-import from the same URL (overwrites), or re-copy the folder after `git pull`.
-
-### Uninstall
-
-Remove `i-have-adhd` from the Skills manager, or delete `~/.config/zed/skills/i-have-adhd`.
-
-### Always-on (optional)
-
-Add to your personal `~/.config/zed/AGENTS.md`:
-
-```markdown
-## Output style
-
-The reader has ADHD. Shape every response so it can be acted on:
-
-1. Lead with the answer or next action: command, path, or snippet first.
-2. Number multi-step work; one bounded action per step.
-3. End with one next action doable in under two minutes.
-4. Finish the current issue before raising a new one.
-5. Restate progress each turn ("step 3 of 5 done").
-6. Give time estimates in concrete units, never "a bit".
-7. After a change, show what now works.
-8. Errors: state location, cause, and fix. No drama.
-9. Cap lists at 5 items.
-10. No preamble, no recaps, no closers.
-
-Exceptions: explain fully when asked to explain. Confirm before destructive actions. After three failed fixes, stop and name the doubtful assumption. If the request is ambiguous, ask one short question.
-```
-
-</details>
-
-<details>
-<summary><strong>Hermes</strong></summary>
-
-### Install
-
-```bash
-hermes skills install ayghri/i-have-adhd/skills/i-have-adhd
-```
-
-Type `/i-have-adhd`. The skill installs into `~/.hermes/skills/` and is exposed as a slash command at the next session start.
-
-Prefer to browse first? Add this repo as a skill source (a "tap"), then search and install:
-
-```bash
-hermes skills tap add ayghri/i-have-adhd
-hermes skills search adhd
-hermes skills install ayghri/i-have-adhd/skills/i-have-adhd
-```
-
-### Verify
-
-```bash
-hermes skills list
-```
-
-### Update
-
-```bash
-hermes skills update i-have-adhd
-```
-
-### Uninstall
-
-```bash
-hermes skills uninstall i-have-adhd
-```
-
-Or remove the tap too: `hermes skills tap remove ayghri/i-have-adhd`.
-
-### Always-on (optional)
-
-Add to the `AGENTS.md` in your working directory (Hermes loads it per workdir), or to your persona `SOUL.md` for every session:
-
-```markdown
-## Output style
-
-The reader has ADHD. Shape every response so it can be acted on:
-
-1. Lead with the answer or next action: command, path, or snippet first.
-2. Number multi-step work; one bounded action per step.
-3. End with one next action doable in under two minutes.
-4. Finish the current issue before raising a new one.
-5. Restate progress each turn ("step 3 of 5 done").
-6. Give time estimates in concrete units, never "a bit".
-7. After a change, show what now works.
-8. Errors: state location, cause, and fix. No drama.
-9. Cap lists at 5 items.
-10. No preamble, no recaps, no closers.
-
-Exceptions: explain fully when asked to explain. Confirm before destructive actions. After three failed fixes, stop and name the doubtful assumption. If the request is ambiguous, ask one short question.
-```
-
-</details>
-
-<details>
-<summary><strong>Pi</strong></summary>
-
-Pi implements the Agent Skills standard, so the same `SKILL.md` loads directly, no conversion. Pi's invocation differs from the others: skills are called as `/skill:<name>`.
-
-### Install
-
-```bash
-npx skills add ayghri/i-have-adhd -a pi -y
-```
-
-Prefer the filesystem? Pi discovers skills in `~/.pi/agent/skills/` and `~/.agents/skills/` (global), and `.pi/skills/` and `.agents/skills/` (project):
-
-```bash
-git clone https://github.com/ayghri/i-have-adhd
-mkdir -p ~/.pi/agent/skills
-cp -R i-have-adhd/skills/i-have-adhd ~/.pi/agent/skills/
-```
-
-Enable skill slash commands in Pi's `settings.json`:
-
-```json
-{ "enableSkillCommands": true }
-```
-
-Start a new session and type `/skill:i-have-adhd`.
-
-### Verify
-
-```bash
-npx skills list
-```
-
-Or type `/skill:` in a session and confirm `i-have-adhd` is listed.
-
-### Update
-
-```bash
-npx skills update i-have-adhd
-```
-
-Or re-copy the folder after `git pull`.
-
-### Uninstall
-
-```bash
-npx skills remove i-have-adhd
-```
-
-Or delete `~/.pi/agent/skills/i-have-adhd`.
-
-### Always-on (optional)
-
-Add to your project `AGENTS.md`:
 
 ```markdown
 ## Output style
@@ -430,39 +287,185 @@ Exceptions: explain fully when asked to explain. Confirm before destructive acti
 
 </details>
 
+
 <details>
-<summary><strong>Antigravity (<code>agy</code>)</strong></summary>
+<summary><strong>Hermes</strong></summary>
 
 ### Install
 
 ```bash
-agy plugin install https://github.com/ayghri/i-have-adhd
+hermes skills install ayghri/i-have-adhd/skills/i-have-adhd
+```
+
+Type `/i-have-adhd`. The skill installs into `~/.hermes/skills/` and is exposed as a slash command at the next session start.
+
+Prefer to browse first? Add this repo as a skill source (a "tap"), then search and install:
+
+```bash
+hermes skills tap add ayghri/i-have-adhd
+hermes skills search adhd
+hermes skills install ayghri/i-have-adhd/skills/i-have-adhd
 ```
 
 ### Verify
 
 ```bash
-agy plugin list
+hermes skills list
 ```
 
 ### Update
 
 ```bash
-agy plugin uninstall i-have-adhd
-agy plugin install https://github.com/ayghri/i-have-adhd
+hermes skills update i-have-adhd
 ```
 
 ### Uninstall
 
 ```bash
-agy plugin uninstall i-have-adhd
+hermes skills uninstall i-have-adhd
 ```
 
-Or keep it installed and turn it off: `agy plugin disable i-have-adhd`.
+Or remove the tap too: `hermes skills tap remove ayghri/i-have-adhd`.
 
 ### Always-on (optional)
 
-Add to `~/.gemini/GEMINI.md`:
+Add to the `AGENTS.md` in your working directory (Hermes loads it per workdir), or to your persona `SOUL.md` for every session:
+
+```markdown
+## Output style
+
+The reader has ADHD. Shape every response so it can be acted on:
+
+1. Lead with the answer or next action: command, path, or snippet first.
+2. Number multi-step work; one bounded action per step.
+3. End with one next action doable in under two minutes.
+4. Finish the current issue before raising a new one.
+5. Restate progress each turn ("step 3 of 5 done").
+6. Give time estimates in concrete units, never "a bit".
+7. After a change, show what now works.
+8. Errors: state location, cause, and fix. No drama.
+9. Cap lists at 5 items.
+10. No preamble, no recaps, no closers.
+
+Exceptions: explain fully when asked to explain. Confirm before destructive actions. After three failed fixes, stop and name the doubtful assumption. If the request is ambiguous, ask one short question.
+```
+
+</details>
+
+<details>
+<summary><strong>Pi</strong></summary>
+
+Pi implements the Agent Skills standard, so the same `SKILL.md` loads directly, no conversion. Pi's invocation differs from the others: skills are called as `/skill:<name>`.
+
+### Install
+
+```bash
+npx skills add ayghri/i-have-adhd -a pi -y
+```
+
+Prefer the filesystem? Pi discovers skills in `~/.pi/agent/skills/` and `~/.agents/skills/` (global), and `.pi/skills/` and `.agents/skills/` (project):
+
+```bash
+git clone https://github.com/ayghri/i-have-adhd
+mkdir -p ~/.pi/agent/skills
+cp -R i-have-adhd/skills/i-have-adhd ~/.pi/agent/skills/
+```
+
+Enable skill slash commands in Pi's `settings.json`:
+
+```json
+{ "enableSkillCommands": true }
+```
+
+Start a new session and type `/skill:i-have-adhd`.
+
+### Verify
+
+```bash
+npx skills list
+```
+
+Or type `/skill:` in a session and confirm `i-have-adhd` is listed.
+
+### Update
+
+```bash
+npx skills update i-have-adhd
+```
+
+Or re-copy the folder after `git pull`.
+
+### Uninstall
+
+```bash
+npx skills remove i-have-adhd
+```
+
+Or delete `~/.pi/agent/skills/i-have-adhd`.
+
+### Always-on (optional)
+
+Add to your project `AGENTS.md`:
+
+```markdown
+## Output style
+
+The reader has ADHD. Shape every response so it can be acted on:
+
+1. Lead with the answer or next action: command, path, or snippet first.
+2. Number multi-step work; one bounded action per step.
+3. End with one next action doable in under two minutes.
+4. Finish the current issue before raising a new one.
+5. Restate progress each turn ("step 3 of 5 done").
+6. Give time estimates in concrete units, never "a bit".
+7. After a change, show what now works.
+8. Errors: state location, cause, and fix. No drama.
+9. Cap lists at 5 items.
+10. No preamble, no recaps, no closers.
+
+Exceptions: explain fully when asked to explain. Confirm before destructive actions. After three failed fixes, stop and name the doubtful assumption. If the request is ambiguous, ask one short question.
+```
+
+</details>
+
+
+<details>
+<summary><strong>Zed</strong></summary>
+
+Zed's Agent reads Agent Skills natively: the same `SKILL.md`, no conversion. (Zed's older "Rules" were replaced by Skills plus `AGENTS.md` instructions.)
+
+### Install
+
+In the Agent Panel, open the Skills manager and choose **Create skill from URL** (also in the command palette as `agent: create skill from url`), then paste:
+
+```
+https://github.com/ayghri/i-have-adhd/blob/main/skills/i-have-adhd/SKILL.md
+```
+
+Save it in **User** scope for every project, or **Project** scope for one. Then type `/i-have-adhd` in the Agent Panel.
+
+Prefer the filesystem? Clone the repo and drop the skill folder into your user skills directory:
+
+```bash
+git clone https://github.com/ayghri/i-have-adhd
+cp -R i-have-adhd/skills/i-have-adhd ~/.config/zed/skills/
+```
+
+### Verify
+
+Open the Skills manager in the Agent Panel and confirm `i-have-adhd` is listed. Or type `/` and confirm it appears.
+
+### Update
+
+Re-import from the same URL (overwrites), or re-copy the folder after `git pull`.
+
+### Uninstall
+
+Remove `i-have-adhd` from the Skills manager, or delete `~/.config/zed/skills/i-have-adhd`.
+
+### Always-on (optional)
+
+Add to your personal `~/.config/zed/AGENTS.md`:
 
 ```markdown
 ## Output style
@@ -552,8 +555,8 @@ The reader has ADHD. Shape every response so it can be acted on:
 
 Exceptions: explain fully when asked to explain. Confirm before destructive actions. After three failed fixes, stop and name the doubtful assumption. If the request is ambiguous, ask one short question.
 ```
-
 </details>
+
 
 ## How activation works
 

@@ -1,5 +1,5 @@
 <p align="center">
-    <a href="https://github.com/ayghri/i-have-adhd"> <img src="/logo.png" alt="i-have-adhd" width="140" /></a>
+  <img src="/logo.png" alt="i-have-adhd" width="140" />
 </p>
 <p align="center">
   <strong align="center">Đầu ra thân thiện với người có ADHD. Không cần chẩn đoán ADHD!</strong>
@@ -9,44 +9,18 @@
 </p>
 
 <p align="center">
-  <a href="/README.md">English</a> ·
-  <a href="README.zh-CN.md">简体</a> ·
-  <a href="README.ja.md">日本語</a> ·
-  <a href="README.ko.md">한국어</a> ·
-  <strong>Tiếng Việt</strong> ·
-  <a href="README.pt-BR.md">Português (BR)</a>
+  <a href="/README.md">🇬🇧</a> ·
+  <a href="README.zh-CN.md">🇨🇳</a> ·
+  <a href="README.pt-BR.md">🇧🇷</a> ·
+  <a href="README.ja.md">🇯🇵</a> ·
+  <strong>🇻🇳</strong> ·
+  <a href="README.ko.md">🇰🇷</a>
 </p>
 
 
 ## Cài đặt
 
-<details>
-<summary><strong>Claude Code</strong></summary>
-
-```bash
-claude plugin marketplace add ayghri/i-have-adhd
-claude plugin install i-have-adhd@i-have-adhd
-```
-
-Sau đó gõ `/i-have-adhd`. Không cần clone về máy: Claude Code sẽ tự tải repo và cập nhật.
-
-Bạn muốn tự động bật trong mọi phiên làm việc? Chạy `touch ~/.claude/.i-have-adhd-always` (xem [INSTALL.md](/INSTALL.md)).
-
-</details>
-
-<details>
-<summary><strong>Codex</strong></summary>
-
-```bash
-codex plugin marketplace add ayghri/i-have-adhd --ref main
-codex plugin add i-have-adhd@i-have-adhd
-```
-
-Sau đó, gõ `$i-have-adhd` để chủ động áp dụng phong cách đầu ra này. Skill cũng có thể được Codex tự động gọi khi nhận thấy tác vụ phù hợp.
-
-</details>
-
-Hướng dẫn cài đặt cho các trợ lý lập trình khác có tại [INSTALL.md](/INSTALL.md).
+🔗 [Hướng dẫn cài đặt](/.github/install/INSTALL.vi.md)
 
 ## Skill này làm gì
 

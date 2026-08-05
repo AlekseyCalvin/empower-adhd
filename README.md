@@ -9,44 +9,18 @@
 </p>
 
 <p align="center">
-  <strong>English</strong> ·
-  <a href=".github/readme/README.zh-CN.md">简体中文</a> ·
-  <a href=".github/readme/README.ja.md">日本語</a> ·
-  <a href=".github/readme/README.ko.md">한국어</a> ·
-  <a href=".github/readme/README.vi.md">Tiếng Việt</a> ·
-  <a href=".github/readme/README.pt-BR.md">Português (BR)</a>
+  <strong>🇬🇧</strong> ·
+  <a href=".github/readme/README.zh-CN.md">🇨🇳</a> ·
+  <a href=".github/readme/README.pt-BR.md">🇧🇷</a> ·
+  <a href=".github/readme/README.ja.md">🇯🇵</a> ·
+  <a href=".github/readme/README.vi.md">🇻🇳</a> ·
+  <a href=".github/readme/README.ko.md">🇰🇷</a>
 </p>
 
 
 ## Install
 
-<details>
-<summary><strong>Claude Code</strong></summary>
-
-```bash
-claude plugin marketplace add ayghri/i-have-adhd
-claude plugin install i-have-adhd@i-have-adhd
-```
-
-Then type `/i-have-adhd`. No local clone needed: Claude Code fetches the repo and keeps it updated.
-
-Want it on every session? `touch ~/.claude/.i-have-adhd-always` (see [INSTALL.md](./INSTALL.md)).
-
-</details>
-
-<details>
-<summary><strong>Codex</strong></summary>
-
-```bash
-codex plugin marketplace add ayghri/i-have-adhd --ref main
-codex plugin add i-have-adhd@i-have-adhd
-```
-
-Then type `$i-have-adhd` to apply the output style explicitly. The skill can also be invoked implicitly when Codex sees a task that benefits from it.
-
-</details>
-
-Install instructions for other coding agents live in [INSTALL.md](./INSTALL.md).
+🔗 [Installation Instructions](/INSTALL.md)
 
 ## What it does
 

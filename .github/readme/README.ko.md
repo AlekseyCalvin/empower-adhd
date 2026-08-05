@@ -1,5 +1,5 @@
 <p align="center">
-    <a href="https://github.com/ayghri/i-have-adhd"> <img src="/logo.png" alt="i-have-adhd" width="140" /></a>
+  <img src="/logo.png" alt="i-have-adhd" width="140" />
 </p>
 <p align="center">
   <strong align="center">ADHD 친화적인 출력. ADHD 진단은 필요 없어요!</strong>
@@ -9,44 +9,18 @@
 </p>
 
 <p align="center">
-  <a href="/README.md">English</a> ·
-  <a href="README.zh-CN.md">简体</a> ·
-  <a href="README.ja.md">日本語</a> ·
-  <strong>한국어</strong> ·
-  <a href="README.vi.md">Tiếng Việt</a> ·
-  <a href="README.pt-BR.md">Português (BR)</a>
+  <a href="/README.md">🇬🇧</a> ·
+  <a href="README.zh-CN.md">🇨🇳</a> ·
+  <a href="README.pt-BR.md">🇧🇷</a> ·
+  <a href="README.ja.md">🇯🇵</a> ·
+  <a href="README.vi.md">🇻🇳</a> ·
+  <strong>🇰🇷</strong>
 </p>
 
 
 ## 설치
 
-<details>
-<summary><strong>Claude Code</strong></summary>
-
-```bash
-claude plugin marketplace add ayghri/i-have-adhd
-claude plugin install i-have-adhd@i-have-adhd
-```
-
-그런 다음 `/i-have-adhd`를 입력하세요. 로컬에 클론할 필요 없습니다. Claude Code가 저장소를 받아 최신 상태로 유지합니다.
-
-모든 세션에서 항상 활성화하고 싶다면 `touch ~/.claude/.i-have-adhd-always` ([INSTALL.md](/INSTALL.md) 참고).
-
-</details>
-
-<details>
-<summary><strong>Codex</strong></summary>
-
-```bash
-codex plugin marketplace add ayghri/i-have-adhd --ref main
-codex plugin add i-have-adhd@i-have-adhd
-```
-
-`$i-have-adhd`를 입력하면 출력 스타일이 명시적으로 적용됩니다. Codex가 이 스킬이 도움이 될 만한 작업을 감지하면 자동으로 호출되기도 합니다.
-
-</details>
-
-다른 코딩 에이전트 설치 방법은 [INSTALL.md](/INSTALL.md)를 참고하세요.
+🔗 [설치 안내](/.github/install/INSTALL.ko.md)
 
 ## 무슨 일을 하나
 
@@ -55,11 +29,12 @@ codex plugin add i-have-adhd@i-have-adhd
 
 ## 무엇이 달라지는가
 
+
 <table>
 <tr>
 <td width="50%">
 
-## Before
+## 사용 전
 
 > 좋은 질문이네요! 한번 생각해볼게요. 인증 흐름에는 미들웨어, 토큰 검증, 쿠키 처리 같은 여러 부분이 있어요. `src/auth.ts`를 살펴보면 `verifyToken` 함수(42~58번째 줄 근처)가 구버전 `jsonwebtoken` API를 쓰는 것 같아요. 한 가지 방법은 패키지를 업데이트하고 그 함수를 다시 작성하는 거예요. 변경 후에는 인증 테스트를 돌려서 문제가 없는지 확인해야 해요. 아, 그리고 하나 더, 전체 의존성 버전도 살펴보시면 좋을 것 같아요. 도움이 되었기를! 더 깊이 파고 싶으시면 알려주세요.
 
@@ -67,7 +42,7 @@ codex plugin add i-have-adhd@i-have-adhd
 
 <td width="50%">
 
-## After
+## 사용 후
 
 > `npm install jsonwebtoken@latest` 실행 후 `src/auth.ts:42`를 수정하세요.
 >
@@ -80,6 +55,7 @@ codex plugin add i-have-adhd@i-have-adhd
 </td>
 </tr>
 </table>
+
 
 ## 규칙
 

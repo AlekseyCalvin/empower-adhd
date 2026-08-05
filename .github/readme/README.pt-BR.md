@@ -1,5 +1,5 @@
 <p align="center">
-    <a href="https://github.com/ayghri/i-have-adhd"> <img src="/logo.png" alt="i-have-adhd" width="140" /></a>
+  <img src="/logo.png" alt="i-have-adhd" width="140" />
 </p>
 <p align="center">
   <strong align="center">Respostas amigáveis para quem tem TDAH. Sem precisar de diagnóstico!</strong>
@@ -9,44 +9,18 @@
 </p>
 
 <p align="center">
-  <a href="/README.md">English</a> ·
-  <a href="README.zh-CN.md">简体中文</a> ·
-  <a href="README.ja.md">日本語</a> ·
-  <a href="README.ko.md">한국어</a> ·
-  <a href="README.vi.md">Tiếng Việt</a> ·
-  <strong>Português (BR)</strong>
+  <a href="/README.md">🇬🇧</a> ·
+  <a href="README.zh-CN.md">🇨🇳</a> ·
+  <strong>🇧🇷</strong> ·
+  <a href="README.ja.md">🇯🇵</a> ·
+  <a href="README.vi.md">🇻🇳</a> ·
+  <a href="README.ko.md">🇰🇷</a>
 </p>
 
 
 ## Instalação
 
-<details>
-<summary><strong>Claude Code</strong></summary>
-
-```bash
-claude plugin marketplace add ayghri/i-have-adhd
-claude plugin install i-have-adhd@i-have-adhd
-```
-
-Depois digite `/i-have-adhd`. Não precisa clonar nada localmente: o Claude Code baixa o repositório e o mantém atualizado.
-
-Quer ativar em toda sessão? `touch ~/.claude/.i-have-adhd-always` (veja o [INSTALL.md](/INSTALL.md)).
-
-</details>
-
-<details>
-<summary><strong>Codex</strong></summary>
-
-```bash
-codex plugin marketplace add ayghri/i-have-adhd --ref main
-codex plugin add i-have-adhd@i-have-adhd
-```
-
-Depois digite `$i-have-adhd` para aplicar o estilo de resposta explicitamente. A skill também pode ser invocada implicitamente quando o Codex identifica uma tarefa que se beneficia dela.
-
-</details>
-
-As instruções de instalação para outros assistentes de código estão no [INSTALL.md](/INSTALL.md).
+🔗 [Instruções de instalação](/.github/install/INSTALL.pt-BR.md)
 
 ## O que ela faz
 
