@@ -1,4 +1,59 @@
-# Install i-have-adhd
+# How to install
+
+<details>
+<summary><strong>Antigravity (<code>agy</code>)</strong></summary>
+
+### Install
+
+```bash
+agy plugin install https://github.com/ayghri/i-have-adhd
+```
+
+### Verify
+
+```bash
+agy plugin list
+```
+
+### Update
+
+```bash
+agy plugin uninstall i-have-adhd
+agy plugin install https://github.com/ayghri/i-have-adhd
+```
+
+### Uninstall
+
+```bash
+agy plugin uninstall i-have-adhd
+```
+
+Or keep it installed and turn it off: `agy plugin disable i-have-adhd`.
+
+### Always-on (optional)
+
+Add to `~/.gemini/GEMINI.md`:
+
+```markdown
+## Output style
+
+The reader has ADHD. Shape every response so it can be acted on:
+
+1. Lead with the answer or next action: command, path, or snippet first.
+2. Number multi-step work; one bounded action per step.
+3. End with one next action doable in under two minutes.
+4. Finish the current issue before raising a new one.
+5. Restate progress each turn ("step 3 of 5 done").
+6. Give time estimates in concrete units, never "a bit".
+7. After a change, show what now works.
+8. Errors: state location, cause, and fix. No drama.
+9. Cap lists at 5 items.
+10. No preamble, no recaps, no closers.
+
+Exceptions: explain fully when asked to explain. Confirm before destructive actions. After three failed fixes, stop and name the doubtful assumption. If the request is ambiguous, ask one short question.
+```
+
+</details>
 
 <details>
 <summary><strong>Claude Code</strong></summary>
@@ -50,6 +105,7 @@ rm ~/.claude/.i-have-adhd-always
 The hook only fires when the flag file exists, so installing the plugin changes nothing by itself. Honors `$CLAUDE_CONFIG_DIR` if you've moved your config dir. "stop adhd mode" still turns it off for the current session.
 
 </details>
+
 
 <details>
 <summary><strong>Codex</strong></summary>
@@ -110,42 +166,105 @@ Exceptions: explain fully when asked to explain. Confirm before destructive acti
 </details>
 
 <details>
-<summary><strong>Zed</strong></summary>
+<summary><strong>Gemini CLI</strong></summary>
 
-Zed's Agent reads Agent Skills natively: the same `SKILL.md`, no conversion. (Zed's older "Rules" were replaced by Skills plus `AGENTS.md` instructions.)
+Gemini CLI has no plugin marketplace, so there are two native routes: a **custom command** (opt-in, off until you invoke it) or an **extension** (always-on once installed). The command route matches this skill's default posture; pick it unless you want the rules on every session.
+
+### Install (command, opt-in)
+
+```bash
+mkdir -p ~/.gemini/commands
+curl -fsSL https://raw.githubusercontent.com/ayghri/i-have-adhd/main/skills/i-have-adhd/agents/gemini.toml \
+  -o ~/.gemini/commands/i-have-adhd.toml
+```
+
+Start a new session, type `/i-have-adhd`. It stays on for that session.
+
+### Install (extension, always-on)
+
+```bash
+gemini extensions install https://github.com/ayghri/i-have-adhd
+```
+
+The extension loads `GEMINI.md`, which imports the full skill, so the rules apply from message one. `git` must be installed.
+
+### Verify
+
+```bash
+gemini extensions list          # extension route
+ls ~/.gemini/commands           # command route: i-have-adhd.toml present
+```
+
+Or type `/` in a session and confirm `i-have-adhd` is listed.
+
+### Update
+
+```bash
+gemini extensions update i-have-adhd    # extension route
+# command route: re-run the curl above
+```
+
+### Uninstall
+
+```bash
+gemini extensions uninstall i-have-adhd    # extension route
+rm ~/.gemini/commands/i-have-adhd.toml     # command route
+```
+
+</details>
+
+<details>
+<summary><strong>GitHub Copilot (VS Code and Copilot CLI)</strong></summary>
+
+Copilot reads Agent Skills natively: the same `SKILL.md`, no conversion. It scans `.github/skills/`, `.claude/skills/`, and `.agents/skills/` in the project, and `~/.copilot/skills/`, `~/.claude/skills/`, and `~/.agents/skills/` globally.
 
 ### Install
 
-In the Agent Panel, open the Skills manager and choose **Create skill from URL** (also in the command palette as `agent: create skill from url`), then paste:
-
+```bash
+npx skills add ayghri/i-have-adhd -a github-copilot        # this project
+npx skills add ayghri/i-have-adhd -a github-copilot -g     # all projects
 ```
-https://github.com/ayghri/i-have-adhd/blob/main/skills/i-have-adhd/SKILL.md
-```
 
-Save it in **User** scope for every project, or **Project** scope for one. Then type `/i-have-adhd` in the Agent Panel.
-
-Prefer the filesystem? Clone the repo and drop the skill folder into your user skills directory:
+Without the CLI, copy the skill folder into any directory Copilot scans:
 
 ```bash
 git clone https://github.com/ayghri/i-have-adhd
-cp -R i-have-adhd/skills/i-have-adhd ~/.config/zed/skills/
+mkdir -p ~/.copilot/skills
+cp -R i-have-adhd/skills/i-have-adhd ~/.copilot/skills/
 ```
 
 ### Verify
 
-Open the Skills manager in the Agent Panel and confirm `i-have-adhd` is listed. Or type `/` and confirm it appears.
+Type `/` in the chat input and confirm `i-have-adhd` appears. Or:
+
+```bash
+npx skills list
+npx skills ls -g    # if installed globally
+```
 
 ### Update
 
-Re-import from the same URL (overwrites), or re-copy the folder after `git pull`.
+```bash
+npx skills update i-have-adhd
+```
+
+Or re-copy the folder after `git pull`.
 
 ### Uninstall
 
-Remove `i-have-adhd` from the Skills manager, or delete `~/.config/zed/skills/i-have-adhd`.
+```bash
+npx skills remove i-have-adhd
+```
+
+Or delete the `i-have-adhd` folder from the skills directory it landed in.
+
+### Activation note
+
+Copilot respects `disable-model-invocation`: nothing applies until you invoke the skill, same as Claude Code (tested in [#60](https://github.com/ayghri/i-have-adhd/pull/60)).
 
 ### Always-on (optional)
 
-Add to your personal `~/.config/zed/AGENTS.md`:
+Add the block below to `.github/copilot-instructions.md` in the project (Copilot reads it into every chat):
 
 ```markdown
 ## Output style
@@ -167,6 +286,7 @@ Exceptions: explain fully when asked to explain. Confirm before destructive acti
 ```
 
 </details>
+
 
 <details>
 <summary><strong>Hermes</strong></summary>
@@ -313,161 +433,44 @@ If `PI_CODING_AGENT_DIR` is set, put `.i-have-adhd-always` in that directory ins
 
 </details>
 
-<details>
-<summary><strong>Gemini CLI</strong></summary>
-
-Gemini CLI has no plugin marketplace, so there are two native routes: a **custom command** (opt-in, off until you invoke it) or an **extension** (always-on once installed). The command route matches this skill's default posture; pick it unless you want the rules on every session.
-
-### Install (command, opt-in)
-
-```bash
-mkdir -p ~/.gemini/commands
-curl -fsSL https://raw.githubusercontent.com/ayghri/i-have-adhd/main/skills/i-have-adhd/agents/gemini.toml \
-  -o ~/.gemini/commands/i-have-adhd.toml
-```
-
-Start a new session, type `/i-have-adhd`. It stays on for that session.
-
-### Install (extension, always-on)
-
-```bash
-gemini extensions install https://github.com/ayghri/i-have-adhd
-```
-
-The extension loads `GEMINI.md`, which imports the full skill, so the rules apply from message one. `git` must be installed.
-
-### Verify
-
-```bash
-gemini extensions list          # extension route
-ls ~/.gemini/commands           # command route: i-have-adhd.toml present
-```
-
-Or type `/` in a session and confirm `i-have-adhd` is listed.
-
-### Update
-
-```bash
-gemini extensions update i-have-adhd    # extension route
-# command route: re-run the curl above
-```
-
-### Uninstall
-
-```bash
-gemini extensions uninstall i-have-adhd    # extension route
-rm ~/.gemini/commands/i-have-adhd.toml     # command route
-```
-
-</details>
 
 <details>
-<summary><strong>GitHub Copilot (VS Code and Copilot CLI)</strong></summary>
+<summary><strong>Zed</strong></summary>
 
-Copilot reads Agent Skills natively: the same `SKILL.md`, no conversion. It scans `.github/skills/`, `.claude/skills/`, and `.agents/skills/` in the project, and `~/.copilot/skills/`, `~/.claude/skills/`, and `~/.agents/skills/` globally.
+Zed's Agent reads Agent Skills natively: the same `SKILL.md`, no conversion. (Zed's older "Rules" were replaced by Skills plus `AGENTS.md` instructions.)
 
 ### Install
 
-```bash
-npx skills add ayghri/i-have-adhd -a github-copilot        # this project
-npx skills add ayghri/i-have-adhd -a github-copilot -g     # all projects
+In the Agent Panel, open the Skills manager and choose **Create skill from URL** (also in the command palette as `agent: create skill from url`), then paste:
+
+```
+https://github.com/ayghri/i-have-adhd/blob/main/skills/i-have-adhd/SKILL.md
 ```
 
-Without the CLI, copy the skill folder into any directory Copilot scans:
+Save it in **User** scope for every project, or **Project** scope for one. Then type `/i-have-adhd` in the Agent Panel.
+
+Prefer the filesystem? Clone the repo and drop the skill folder into your user skills directory:
 
 ```bash
 git clone https://github.com/ayghri/i-have-adhd
-mkdir -p ~/.copilot/skills
-cp -R i-have-adhd/skills/i-have-adhd ~/.copilot/skills/
+cp -R i-have-adhd/skills/i-have-adhd ~/.config/zed/skills/
 ```
 
 ### Verify
 
-Type `/` in the chat input and confirm `i-have-adhd` appears. Or:
-
-```bash
-npx skills list
-npx skills ls -g    # if installed globally
-```
+Open the Skills manager in the Agent Panel and confirm `i-have-adhd` is listed. Or type `/` and confirm it appears.
 
 ### Update
 
-```bash
-npx skills update i-have-adhd
-```
-
-Or re-copy the folder after `git pull`.
+Re-import from the same URL (overwrites), or re-copy the folder after `git pull`.
 
 ### Uninstall
 
-```bash
-npx skills remove i-have-adhd
-```
-
-Or delete the `i-have-adhd` folder from the skills directory it landed in.
-
-### Activation note
-
-Copilot respects `disable-model-invocation`: nothing applies until you invoke the skill, same as Claude Code (tested in [#60](https://github.com/ayghri/i-have-adhd/pull/60)).
+Remove `i-have-adhd` from the Skills manager, or delete `~/.config/zed/skills/i-have-adhd`.
 
 ### Always-on (optional)
 
-Add the block below to `.github/copilot-instructions.md` in the project (Copilot reads it into every chat):
-
-```markdown
-## Output style
-
-The reader has ADHD. Shape every response so it can be acted on:
-
-1. Lead with the answer or next action: command, path, or snippet first.
-2. Number multi-step work; one bounded action per step.
-3. End with one next action doable in under two minutes.
-4. Finish the current issue before raising a new one.
-5. Restate progress each turn ("step 3 of 5 done").
-6. Give time estimates in concrete units, never "a bit".
-7. After a change, show what now works.
-8. Errors: state location, cause, and fix. No drama.
-9. Cap lists at 5 items.
-10. No preamble, no recaps, no closers.
-
-Exceptions: explain fully when asked to explain. Confirm before destructive actions. After three failed fixes, stop and name the doubtful assumption. If the request is ambiguous, ask one short question.
-```
-
-</details>
-
-<details>
-<summary><strong>Antigravity (<code>agy</code>)</strong></summary>
-
-### Install
-
-```bash
-agy plugin install https://github.com/ayghri/i-have-adhd
-```
-
-### Verify
-
-```bash
-agy plugin list
-```
-
-### Update
-
-```bash
-agy plugin uninstall i-have-adhd
-agy plugin install https://github.com/ayghri/i-have-adhd
-```
-
-### Uninstall
-
-```bash
-agy plugin uninstall i-have-adhd
-```
-
-Or keep it installed and turn it off: `agy plugin disable i-have-adhd`.
-
-### Always-on (optional)
-
-Add to `~/.gemini/GEMINI.md`:
+Add to your personal `~/.config/zed/AGENTS.md`:
 
 ```markdown
 ## Output style
@@ -557,15 +560,15 @@ The reader has ADHD. Shape every response so it can be acted on:
 
 Exceptions: explain fully when asked to explain. Confirm before destructive actions. After three failed fixes, stop and name the doubtful assumption. If the request is ambiguous, ask one short question.
 ```
-
 </details>
+
 
 ## How activation works
 
-1. **Installed, not invoked.** In Claude Code, nothing happens because `SKILL.md` sets `disable-model-invocation: true`. Pi's extension is also inert until invoked, restored from session state, started with `--adhd`, or enabled by its flag file. Codex allows implicit invocation, and other Agent Skills harnesses may activate the skill themselves.
-2. **You invoke the mode.** Claude Code uses `/i-have-adhd`; Pi supports `/i-have-adhd` and `/skill:i-have-adhd`; Codex uses `$i-have-adhd`. The rules stay active for that session until "stop adhd mode" or "normal mode".
-3. **You create an always-on flag.** Claude Code uses `~/.claude/.i-have-adhd-always`; Pi uses `~/.pi/agent/.i-have-adhd-always`. Each harness reloads the full ruleset for new sessions while its flag exists.
-4. **You add the always-on snippet above** (other harnesses). This keeps the core rules in the agent's persistent context.
+1. **Installed, not invoked.** In Claude Code, nothing happens: `SKILL.md` sets `disable-model-invocation: true`, so the model never sees the skill and never applies the rules on its own. That flag is Claude Code's own; Codex ships with implicit invocation allowed (see the README), and harnesses that implement the open Agent Skills spec load every skill's description at startup and may activate the skill themselves.
+2. **You type `/i-have-adhd`.** Rules on for that session. "stop adhd mode" or "normal mode" turns them off.
+3. **You touch `~/.claude/.i-have-adhd-always`** (Claude Code). A `SessionStart` hook loads the full ruleset from message one, every session.
+4. **You add the always-on snippet above** (other harnesses). Keeps the core rules in your agent's persistent context.
 
 In Claude Code, no middle ground: if you did not turn it on, it is off.
 
@@ -573,9 +576,7 @@ In Claude Code, no middle ground: if you did not turn it on, it is off.
 
 **`/i-have-adhd` not in autocomplete.** Restart the agent. The plugin index is read at startup.
 
-**Claude Code always-on flag has no effect.** Update the plugin (`claude plugin marketplace update i-have-adhd`) and restart. Hooks are read at startup, and the flag needs the plugin version that ships `hooks/hooks.json`.
-
-**Pi always-on flag has no effect.** Confirm the native package appears in `pi list`, put the flag under the effective Pi agent directory (`~/.pi/agent` or `$PI_CODING_AGENT_DIR`), then run `/reload`.
+**Always-on flag has no effect.** Update the plugin (`claude plugin marketplace update i-have-adhd`) and restart. Hooks are read at startup, and the flag needs the plugin version that ships `hooks/hooks.json`.
 
 **`claude plugin marketplace add` fails.** Use the `owner/repo` form. A local path must point at the repo root, not `.claude-plugin/`.
 

@@ -31,7 +31,12 @@ type AdhdModeState = {
 };
 
 function stripFrontmatter(content: string): string {
-  return content.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n?/, "").trim();
+  return content
+    .replace(
+      /^---[^\S\r\n]*\r?\n[\s\S]*?\r?\n---[^\S\r\n]*(?:\r?\n|$)/,
+      "",
+    )
+    .trim();
 }
 
 function loadRules(): string {
