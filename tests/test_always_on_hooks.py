@@ -53,6 +53,13 @@ class AlwaysOnHookTest(unittest.TestCase):
             env=env,
         )
 
+    @staticmethod
+    def normalize(stdout):
+        # The banner embeds the flag path. On Windows the sh runtime joins it
+        # with "/" while node and PowerShell join with "\"; both name the same
+        # file, so unify separators (and newlines) before comparing runtimes.
+        return stdout.replace("\r\n", "\n").replace("\\", "/")
+
     def test_hook_is_silent_without_opt_in_flag(self):
         self.assertTrue(self.runtimes(), "no hook runtime is available")
 
@@ -74,9 +81,29 @@ class AlwaysOnHookTest(unittest.TestCase):
                 result = self.run_hook(command)
                 self.assertEqual(0, result.returncode)
                 self.assertEqual("", result.stderr)
-                normalized = result.stdout.replace("\r\n", "\n")
+                normalized = self.normalize(result.stdout)
                 self.assertNotIn("name: fixture", normalized)
                 self.assertIn("\n\nFixture body.\n", normalized)
+                outputs[name] = normalized
+
+        self.assertEqual(1, len(set(outputs.values())))
+
+    def test_runtimes_keep_content_when_frontmatter_is_unclosed(self):
+        # An opening --- with no closing delimiter is not frontmatter. Keeping
+        # the whole file beats injecting a banner that promises "the ruleset
+        # below" followed by nothing.
+        skill_path = self.plugin_root / "skills" / "i-have-adhd" / "SKILL.md"
+        skill_path.write_text("---\nname: fixture\nFixture body, fence never closed.\n")
+        (self.config_dir / ".i-have-adhd-always").touch()
+        outputs = {}
+
+        for name, command in self.runtimes():
+            with self.subTest(runtime=name):
+                result = self.run_hook(command)
+                self.assertEqual(0, result.returncode)
+                self.assertEqual("", result.stderr)
+                normalized = self.normalize(result.stdout)
+                self.assertIn("Fixture body, fence never closed.", normalized)
                 outputs[name] = normalized
 
         self.assertEqual(1, len(set(outputs.values())))

@@ -25,7 +25,8 @@ try {
   $bodyStart = 0
 
   if ($lines.Length -gt 0 -and $lines[0] -match '^---\s*$') {
-    $bodyStart = $lines.Length
+    # Only treat the block as frontmatter when the closing delimiter exists;
+    # an unterminated fence is not frontmatter, so keep the whole file.
     for ($i = 1; $i -lt $lines.Length; $i++) {
       if ($lines[$i] -match '^---\s*$') {
         $bodyStart = $i + 1
