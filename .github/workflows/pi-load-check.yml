@@ -5,6 +5,7 @@ on:
     paths:
       - extensions/**
       - skills/**
+      - package.json
       - scripts/check_pi_extension.py
       - .github/workflows/pi-load-check.yml
   push:
