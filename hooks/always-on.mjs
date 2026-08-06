@@ -3,9 +3,9 @@
 // Never blocks session start: any failure exits 0.
 //
 // Runs under Node so it works on macOS, Linux, and Windows without depending on
-// a POSIX shell (`sh`) being on PATH. Claude Code ships a Node runtime and
-// expands ${CLAUDE_PLUGIN_ROOT} in the hook command before invoking it, so the
-// launcher works under PowerShell (Windows) as well as sh (macOS/Linux).
+// a POSIX shell (`sh`) being on PATH. The hook uses exec form, so Claude Code
+// passes the script path directly without PowerShell or POSIX-shell parsing.
+// Native sh and PowerShell implementations remain available as fallbacks.
 
 import fs from "node:fs";
 import os from "node:os";
@@ -27,7 +27,11 @@ try {
   // Strip a leading YAML frontmatter block (--- ... --- at the very top of file).
   const body = fs
     .readFileSync(skillPath, "utf8")
-    .replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n/, "");
+    .replace(
+      /^---[^\S\r\n]*\r?\n[\s\S]*?\r?\n---[^\S\r\n]*(?:\r?\n|$)/,
+      "",
+    )
+    .replace(/(?:\r?\n)+$/, "");
 
   process.stdout.write(
     "ADHD MODE ACTIVE (always-on). The ruleset below applies to every response. " +
