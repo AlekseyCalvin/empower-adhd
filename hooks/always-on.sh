@@ -19,11 +19,19 @@ skill_path="$script_dir/../skills/i-have-adhd/SKILL.md"
 [ -f "$skill_path" ] || exit 0
 
 # Strip a leading YAML frontmatter block (--- ... --- at the very top of file).
+# An unterminated fence is not frontmatter, so the whole file is kept unless the
+# closing delimiter exists (two passes; matches the Node and PowerShell hooks).
 body=$(awk '
-  NR == 1 && $0 ~ /^---[[:space:]]*$/ { in_fm = 1; next }
-  in_fm && $0 ~ /^---[[:space:]]*$/   { in_fm = 0; next }
-  !in_fm                              { print }
-' "$skill_path") || exit 0
+  NR == FNR {
+    if (NR == 1 && $0 ~ /^---[[:space:]]*$/) { in_fm = 1; next }
+    if (in_fm && $0 ~ /^---[[:space:]]*$/)   { in_fm = 0; closed = 1 }
+    next
+  }
+  FNR == 1 { strip = closed }
+  strip && FNR == 1 && $0 ~ /^---[[:space:]]*$/ { skipping = 1; next }
+  skipping && $0 ~ /^---[[:space:]]*$/          { skipping = 0; next }
+  !skipping { print }
+' "$skill_path" "$skill_path") || exit 0
 
 printf 'ADHD MODE ACTIVE (always-on). The ruleset below applies to every response. "stop adhd mode" turns it off for this session; delete %s to turn always-on off for good.\n\n%s\n' \
   "$flag_path" "$body"

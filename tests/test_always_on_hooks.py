@@ -81,6 +81,26 @@ class AlwaysOnHookTest(unittest.TestCase):
 
         self.assertEqual(1, len(set(outputs.values())))
 
+    def test_runtimes_keep_content_when_frontmatter_is_unclosed(self):
+        # An opening --- with no closing delimiter is not frontmatter. Keeping
+        # the whole file beats injecting a banner that promises "the ruleset
+        # below" followed by nothing.
+        skill_path = self.plugin_root / "skills" / "i-have-adhd" / "SKILL.md"
+        skill_path.write_text("---\nname: fixture\nFixture body, fence never closed.\n")
+        (self.config_dir / ".i-have-adhd-always").touch()
+        outputs = {}
+
+        for name, command in self.runtimes():
+            with self.subTest(runtime=name):
+                result = self.run_hook(command)
+                self.assertEqual(0, result.returncode)
+                self.assertEqual("", result.stderr)
+                normalized = result.stdout.replace("\r\n", "\n")
+                self.assertIn("Fixture body, fence never closed.", normalized)
+                outputs[name] = normalized
+
+        self.assertEqual(1, len(set(outputs.values())))
+
     def test_hook_uses_shell_free_node_exec_form(self):
         config = json.loads((ROOT / "hooks" / "hooks.json").read_text())
         hook = config["hooks"]["SessionStart"][0]["hooks"][0]
