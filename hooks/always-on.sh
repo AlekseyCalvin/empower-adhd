@@ -3,9 +3,8 @@
 # opted in by creating $CLAUDE_CONFIG_DIR/.i-have-adhd-always (default ~/.claude).
 # Never blocks session start: any failure exits 0.
 #
-# Pure POSIX sh so it runs anywhere Claude Code runs a command hook (sh on
-# macOS/Linux, Git Bash on Windows) without depending on a Node install being
-# on PATH.
+# POSIX fallback for environments where the default Node hook cannot run. It
+# works with sh on macOS/Linux and Git Bash on Windows without a Node install.
 
 claude_dir="${CLAUDE_CONFIG_DIR:-$HOME/.claude}"
 flag_path="$claude_dir/.i-have-adhd-always"
