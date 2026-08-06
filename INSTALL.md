@@ -160,7 +160,8 @@ codex plugin marketplace add ayghri/i-have-adhd --ref main
 codex plugin add i-have-adhd@i-have-adhd
 ```
 
-Type `$i-have-adhd`.
+Invoke the skill explicitly by typing `$i-have-adhd`. Codex will not activate
+it automatically.
 
 ### Verify
 
@@ -608,12 +609,12 @@ Exceptions: explain fully when asked to explain. Confirm before destructive acti
 
 ## How activation works
 
-1. **Installed, not invoked.** In Claude Code and Qwen Code, nothing happens: `SKILL.md` sets `disable-model-invocation: true`, so the model never sees the skill and never applies the rules on its own. Both agents honor that flag. Codex ships with implicit invocation allowed (see the README), and other harnesses may load every skill's description at startup and activate the skill themselves.
-2. **You type `/i-have-adhd`.** Rules on for that session. "stop adhd mode" or "normal mode" turns them off.
+1. **Installed, not invoked.** In Claude Code, Qwen Code, and Codex, nothing happens until you invoke the skill explicitly. Claude Code and Qwen Code honor `disable-model-invocation: true` in `SKILL.md`; Codex honors `policy.allow_implicit_invocation: false` in `agents/openai.yaml`. Other harnesses may load every skill's description at startup and activate the skill themselves.
+2. **You invoke it explicitly.** Type `/i-have-adhd` in Claude Code or Qwen Code, or `$i-have-adhd` in Codex. Rules stay on for that session. "stop adhd mode" or "normal mode" turns them off.
 3. **You touch `~/.claude/.i-have-adhd-always`** (Claude Code). A `SessionStart` hook loads the full ruleset from message one, every session.
 4. **You add the always-on snippet above** (other harnesses). Keeps the core rules in your agent's persistent context.
 
-In Claude Code and Qwen Code, no middle ground: if you did not turn it on, it is off.
+In Claude Code, Qwen Code, and Codex, no middle ground: if you did not turn it on, it is off.
 
 ## Troubleshooting
 
