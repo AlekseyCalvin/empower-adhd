@@ -166,6 +166,28 @@ codex plugin marketplace remove i-have-adhd
 </details>
 
 <details>
+<summary><strong>Kimi Code CLI</strong></summary>
+
+启动一个 Kimi Code 会话，然后：
+
+1. 输入 `/plugins`。
+2. 选择 **Custom**。
+3. 粘贴 `https://github.com/ayghri/i-have-adhd` 并按 Enter。
+4. 选择 **Trust and install**。
+
+使用 slash 命令 `/skill:i-have-adhd` 显式调用此技能。
+
+### 更新
+
+在 Kimi Code 会话中输入 `/plugins`，将光标移至 **I Have ADHD**，按 `R`。
+
+### 卸载
+
+在 Kimi Code 会话中输入 `/plugins`，将光标移至 **I Have ADHD**，按 `D`。
+
+</details>
+
+<details>
 <summary><strong>Gemini CLI</strong></summary>
 
 Gemini CLI 没有插件市场，因此有两种原生方式：**自定义命令**（选择启用，调用前保持关闭）或**扩展**（安装后始终启用）。命令方式符合此技能的默认行为；除非希望每次会话都使用这些规则，否则请选择命令方式。

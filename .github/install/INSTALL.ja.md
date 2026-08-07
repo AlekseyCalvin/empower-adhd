@@ -166,6 +166,28 @@ codex plugin marketplace remove i-have-adhd
 </details>
 
 <details>
+<summary><strong>Kimi Code CLI</strong></summary>
+
+Kimi Code セッションを開始してから、次を実行します：
+
+1. `/plugins` を実行する。
+2. **Custom** を選ぶ。
+3. `https://github.com/ayghri/i-have-adhd` を貼り付けて Enter を押す。
+4. **Trust and install** を選ぶ。
+
+slash コマンド `/skill:i-have-adhd` を使って、このスキルを明示的に呼び出します。
+
+### 更新
+
+Kimi Code セッションで `/plugins` を実行し、**I Have ADHD** にカーソルを合わせて `R` を押します。
+
+### アンインストール
+
+Kimi Code セッションで `/plugins` を実行し、**I Have ADHD** にカーソルを合わせて `D` を押します。
+
+</details>
+
+<details>
 <summary><strong>Gemini CLI</strong></summary>
 
 Gemini CLI にはプラグインマーケットプレイスがないため、ネイティブな方法は 2 つあります。呼び出すまで無効な**カスタムコマンド**（オプトイン）と、インストール後は常時有効な**拡張機能**です。コマンド方式がこのスキルの既定の動作に合うため、すべてのセッションでルールを使いたい場合を除き、こちらを選んでください。

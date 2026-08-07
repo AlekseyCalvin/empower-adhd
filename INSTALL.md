@@ -210,6 +210,29 @@ Exceptions: explain fully when asked to explain. Confirm before destructive acti
 </details>
 
 <details>
+<summary><strong>Kimi Code CLI</strong></summary>
+
+Start a Kimi Code session, then:
+
+1. Run `/plugins`.
+2. Choose **Custom**.
+3. Paste `https://github.com/ayghri/i-have-adhd` and Enter.
+4. Choose **Trust and install**.
+
+Use slash command `/skill:i-have-adhd` to invoke the skill explicitly.
+
+### Update
+
+`/plugins` in Kimi Code session, cursor to **I Have ADHD**, press `R`.
+
+### Uninstall
+
+`/plugins` in Kimi Code session, cursor to **I Have ADHD**, press `D`.
+
+
+</details>
+
+<details>
 <summary><strong>Gemini CLI</strong></summary>
 
 Gemini CLI has no plugin marketplace, so there are two native routes: a **custom command** (opt-in, off until you invoke it) or an **extension** (always-on once installed). The command route matches this skill's default posture; pick it unless you want the rules on every session.
