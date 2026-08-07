@@ -166,28 +166,6 @@ codex plugin marketplace remove i-have-adhd
 </details>
 
 <details>
-<summary><strong>Kimi Code CLI</strong></summary>
-
-Kimi Code 세션을 시작한 뒤 다음을 수행하세요.
-
-1. `/plugins`를 실행합니다.
-2. **Custom**을 선택합니다.
-3. `https://github.com/ayghri/i-have-adhd`를 붙여넣고 Enter를 누릅니다.
-4. **Trust and install**을 선택합니다.
-
-slash 명령 `/skill:i-have-adhd`로 이 스킬을 명시적으로 호출하세요.
-
-### 업데이트
-
-Kimi Code 세션에서 `/plugins`를 실행하고 **I Have ADHD**에 커서를 맞춘 뒤 `R`을 누르세요.
-
-### 제거
-
-Kimi Code 세션에서 `/plugins`를 실행하고 **I Have ADHD**에 커서를 맞춘 뒤 `D`를 누르세요.
-
-</details>
-
-<details>
 <summary><strong>Gemini CLI</strong></summary>
 
 Gemini CLI에는 플러그인 마켓플레이스가 없어 두 가지 기본 방법을 제공합니다. 호출 전까지 꺼져 있는 **사용자 지정 명령**(선택 활성화)과 설치 후 항상 켜지는 **확장 프로그램**입니다. 명령 방식이 이 스킬의 기본 동작과 같으므로 모든 세션에서 규칙을 원하지 않는다면 이 방식을 선택하세요.
@@ -309,7 +287,6 @@ Copilot은 `disable-model-invocation`을 따릅니다. Claude Code와 마찬가�
 
 </details>
 
-
 <details>
 <summary><strong>Hermes</strong></summary>
 
@@ -373,6 +350,29 @@ tap도 제거하려면 `hermes skills tap remove ayghri/i-have-adhd`를 실행�
 ```
 
 </details>
+
+<details>
+<summary><strong>Kimi Code CLI</strong></summary>
+
+Kimi Code 세션을 시작한 뒤 다음을 수행하세요.
+
+1. `/plugins`를 실행합니다.
+2. **Custom**을 선택합니다.
+3. `https://github.com/ayghri/i-have-adhd`를 붙여넣고 Enter를 누릅니다.
+4. **Trust and install**을 선택합니다.
+
+slash 명령 `/skill:i-have-adhd`로 이 스킬을 명시적으로 호출하세요.
+
+### 업데이트
+
+Kimi Code 세션에서 `/plugins`를 실행하고 **I Have ADHD**에 커서를 맞춘 뒤 `R`을 누르세요.
+
+### 제거
+
+Kimi Code 세션에서 `/plugins`를 실행하고 **I Have ADHD**에 커서를 맞춘 뒤 `D`를 누르세요.
+
+</details>
+
 
 <details>
 <summary><strong>Pi</strong></summary>
@@ -450,6 +450,47 @@ npx skills remove i-have-adhd
 
 </details>
 
+
+<details>
+<summary><strong>Qwen Code</strong></summary>
+
+### 설치
+
+```bash
+qwen extensions install ayghri/i-have-adhd
+```
+
+Qwen Code는 GitHub 축약 표기를 지원하며 이 저장소를 네이티브 확장으로 설치합니다. 확장은 `skills/` 아래의 스킬을 검색합니다.
+
+`/i-have-adhd`를 입력해 이 스킬을 명시적으로 호출하세요. 확장만 설치해도 스킬을 호출하기 전까지 출력은 바뀌지 않습니다.
+
+### 확인
+
+```bash
+qwen extensions list
+```
+
+그런 다음 새 Qwen Code 세션을 시작하고 다음을 실행하세요.
+
+```text
+/skills
+```
+
+목록에 `i-have-adhd`가 표시되는지 확인하세요.
+
+### 업데이트
+
+```bash
+qwen extensions update i-have-adhd
+```
+
+### 제거
+
+```bash
+qwen extensions uninstall i-have-adhd
+```
+
+</details>
 
 <details>
 <summary><strong>Zed</strong></summary>

@@ -166,28 +166,6 @@ Ngoại lệ: giải thích đầy đủ khi được yêu cầu. Xác nhận tr
 </details>
 
 <details>
-<summary><strong>Kimi Code CLI</strong></summary>
-
-Hãy bắt đầu một phiên Kimi Code, rồi:
-
-1. Chạy `/plugins`.
-2. Chọn **Custom**.
-3. Dán `https://github.com/ayghri/i-have-adhd` rồi nhấn Enter.
-4. Chọn **Trust and install**.
-
-Dùng lệnh slash `/skill:i-have-adhd` để gọi skill một cách rõ ràng.
-
-### Cập nhật
-
-Trong phiên Kimi Code, chạy `/plugins`, đưa con trỏ đến **I Have ADHD**, rồi nhấn `R`.
-
-### Gỡ cài đặt
-
-Trong phiên Kimi Code, chạy `/plugins`, đưa con trỏ đến **I Have ADHD**, rồi nhấn `D`.
-
-</details>
-
-<details>
 <summary><strong>Gemini CLI</strong></summary>
 
 Gemini CLI không có chợ plugin nên có hai cách tích hợp sẵn: **lệnh tùy chỉnh** (chỉ bật khi gọi) hoặc **extension** (luôn bật sau khi cài). Cách dùng lệnh phù hợp với hành vi mặc định của skill; hãy chọn cách này trừ khi bạn muốn áp dụng quy tắc cho mọi phiên.
@@ -309,7 +287,6 @@ Ngoại lệ: giải thích đầy đủ khi được yêu cầu. Xác nhận tr
 
 </details>
 
-
 <details>
 <summary><strong>Hermes</strong></summary>
 
@@ -373,6 +350,29 @@ Ngoại lệ: giải thích đầy đủ khi được yêu cầu. Xác nhận tr
 ```
 
 </details>
+
+<details>
+<summary><strong>Kimi Code CLI</strong></summary>
+
+Hãy bắt đầu một phiên Kimi Code, rồi:
+
+1. Chạy `/plugins`.
+2. Chọn **Custom**.
+3. Dán `https://github.com/ayghri/i-have-adhd` rồi nhấn Enter.
+4. Chọn **Trust and install**.
+
+Dùng lệnh slash `/skill:i-have-adhd` để gọi skill một cách rõ ràng.
+
+### Cập nhật
+
+Trong phiên Kimi Code, chạy `/plugins`, đưa con trỏ đến **I Have ADHD**, rồi nhấn `R`.
+
+### Gỡ cài đặt
+
+Trong phiên Kimi Code, chạy `/plugins`, đưa con trỏ đến **I Have ADHD**, rồi nhấn `D`.
+
+</details>
+
 
 <details>
 <summary><strong>Pi</strong></summary>
@@ -450,6 +450,47 @@ Ngoại lệ: giải thích đầy đủ khi được yêu cầu. Xác nhận tr
 
 </details>
 
+
+<details>
+<summary><strong>Qwen Code</strong></summary>
+
+### Cài đặt
+
+```bash
+qwen extensions install ayghri/i-have-adhd
+```
+
+Qwen Code hỗ trợ dạng viết tắt GitHub và cài kho lưu trữ này dưới dạng extension gốc. Extension sẽ phát hiện skill trong `skills/`.
+
+Gõ `/i-have-adhd` để gọi skill một cách rõ ràng. Chỉ cài extension sẽ không thay đổi đầu ra cho đến khi skill được gọi.
+
+### Xác minh
+
+```bash
+qwen extensions list
+```
+
+Sau đó, bắt đầu một phiên Qwen Code mới và chạy:
+
+```text
+/skills
+```
+
+Xác nhận `i-have-adhd` xuất hiện trong danh sách.
+
+### Cập nhật
+
+```bash
+qwen extensions update i-have-adhd
+```
+
+### Gỡ cài đặt
+
+```bash
+qwen extensions uninstall i-have-adhd
+```
+
+</details>
 
 <details>
 <summary><strong>Zed</strong></summary>

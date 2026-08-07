@@ -166,28 +166,6 @@ Exceções: explique por completo quando pedirem. Confirme antes de ações dest
 </details>
 
 <details>
-<summary><strong>Kimi Code CLI</strong></summary>
-
-Inicie uma sessão do Kimi Code e:
-
-1. Execute `/plugins`.
-2. Selecione **Custom**.
-3. Cole `https://github.com/ayghri/i-have-adhd` e pressione Enter.
-4. Selecione **Trust and install**.
-
-Use o comando slash `/skill:i-have-adhd` para invocar a skill explicitamente.
-
-### Atualizar
-
-Em uma sessão do Kimi Code, execute `/plugins`, posicione o cursor em **I Have ADHD** e pressione `R`.
-
-### Desinstalar
-
-Em uma sessão do Kimi Code, execute `/plugins`, posicione o cursor em **I Have ADHD** e pressione `D`.
-
-</details>
-
-<details>
 <summary><strong>Gemini CLI</strong></summary>
 
 O Gemini CLI não tem marketplace de plugins, então há duas opções nativas: um **comando personalizado** (opt-in, desativado até ser invocado) ou uma **extensão** (sempre ativa após a instalação). O comando corresponde ao comportamento padrão desta skill; escolha-o, a menos que queira as regras em todas as sessões.
@@ -309,7 +287,6 @@ Exceções: explique por completo quando pedirem. Confirme antes de ações dest
 
 </details>
 
-
 <details>
 <summary><strong>Hermes</strong></summary>
 
@@ -373,6 +350,29 @@ Exceções: explique por completo quando pedirem. Confirme antes de ações dest
 ```
 
 </details>
+
+<details>
+<summary><strong>Kimi Code CLI</strong></summary>
+
+Inicie uma sessão do Kimi Code e:
+
+1. Execute `/plugins`.
+2. Selecione **Custom**.
+3. Cole `https://github.com/ayghri/i-have-adhd` e pressione Enter.
+4. Selecione **Trust and install**.
+
+Use o comando slash `/skill:i-have-adhd` para invocar a skill explicitamente.
+
+### Atualizar
+
+Em uma sessão do Kimi Code, execute `/plugins`, posicione o cursor em **I Have ADHD** e pressione `R`.
+
+### Desinstalar
+
+Em uma sessão do Kimi Code, execute `/plugins`, posicione o cursor em **I Have ADHD** e pressione `D`.
+
+</details>
+
 
 <details>
 <summary><strong>Pi</strong></summary>
@@ -450,6 +450,47 @@ Exceções: explique por completo quando pedirem. Confirme antes de ações dest
 
 </details>
 
+
+<details>
+<summary><strong>Qwen Code</strong></summary>
+
+### Instalar
+
+```bash
+qwen extensions install ayghri/i-have-adhd
+```
+
+O Qwen Code aceita a forma abreviada do GitHub e instala o repositório como extensão nativa. A extensão encontra a skill em `skills/`.
+
+Digite `/i-have-adhd` para invocar a skill explicitamente. Instalar a extensão não altera a saída até que a skill seja invocada.
+
+### Verificar
+
+```bash
+qwen extensions list
+```
+
+Depois, inicie uma nova sessão do Qwen Code e execute:
+
+```text
+/skills
+```
+
+Confirme que `i-have-adhd` aparece na lista.
+
+### Atualizar
+
+```bash
+qwen extensions update i-have-adhd
+```
+
+### Desinstalar
+
+```bash
+qwen extensions uninstall i-have-adhd
+```
+
+</details>
 
 <details>
 <summary><strong>Zed</strong></summary>
