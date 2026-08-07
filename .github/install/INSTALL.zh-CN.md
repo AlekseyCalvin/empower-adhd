@@ -175,7 +175,7 @@ codex plugin marketplace remove i-have-adhd
 3. 粘贴 `https://github.com/ayghri/i-have-adhd` 并按 Enter。
 4. 选择 **Trust and install**。
 
-使用 slash 命令 `/skill:i-have-adhd` 显式调用此技能。
+使用斜杠命令 `/skill:i-have-adhd` 显式调用此技能。
 
 ### 更新
 
