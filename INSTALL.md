@@ -362,7 +362,7 @@ Start a Kimi Code session, then:
 
 1. Run `/plugins`.
 2. Choose **Custom**.
-3. Paste `https://github.com/ayghri/i-have-adhd` and `Enter`.
+3. Paste `https://github.com/ayghri/i-have-adhd` and press `Enter`.
 4. Choose **Trust and install**.
 
 Use slash command `/skill:i-have-adhd` to invoke the skill explicitly.
