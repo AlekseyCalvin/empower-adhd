@@ -354,6 +354,8 @@ Ngoại lệ: giải thích đầy đủ khi được yêu cầu. Xác nhận tr
 <details>
 <summary><strong>Kimi Code CLI</strong></summary>
 
+### Cài đặt
+
 Hãy bắt đầu một phiên Kimi Code, rồi:
 
 1. Chạy `/plugins`.

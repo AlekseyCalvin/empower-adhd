@@ -354,6 +354,8 @@ tap も削除する場合は、`hermes skills tap remove ayghri/i-have-adhd` を
 <details>
 <summary><strong>Kimi Code CLI</strong></summary>
 
+### インストール
+
 Kimi Code セッションを開始してから、次を実行します：
 
 1. `/plugins` を実行する。

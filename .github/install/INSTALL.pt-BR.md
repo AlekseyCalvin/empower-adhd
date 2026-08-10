@@ -354,6 +354,8 @@ Exceções: explique por completo quando pedirem. Confirme antes de ações dest
 <details>
 <summary><strong>Kimi Code CLI</strong></summary>
 
+### Instalar
+
 Inicie uma sessão do Kimi Code e:
 
 1. Execute `/plugins`.
