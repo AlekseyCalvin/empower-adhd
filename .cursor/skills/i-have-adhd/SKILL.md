@@ -92,7 +92,7 @@ Good:
 Bad: "I put in some repairs. Hope they help. Now run `npm test` and paste the first failing line. Let me know if you want to dig deeper."
 Good: "The kit is now fully repaired in line with the latest authoritative academic sources (theory grounded in 30 research papers my subagents found from across 5 academic fields: Now in Markdown, in your `Sources` subfolder, with my explanatory notes and annotations at the start of each doc.). Ultimately, 98% of all lines scan correctly (2967/3013, across all footed meters). A breakdown of every remaining misparse with its full kit output and my notes on the exact profile, mechanism/stage, and a holistic appraisal of the lapse's causalities in a new `Eval/Revised_Kit_Review.md` doc. I tasked an adversarial (but friendly enough, if strict) Opus 4.6 to cross-check my work and it helped me get over an earlier hickup, which was..."
 
-### 4. Suppress tangents as hedged future proposals
+### 4. Finish the current issue before raising a new one. Suppress tangents: mere future proposals hedged.
 
 If a second issue exists, finish the first, then resolve the second, then the third, and so forth... Back up EVERYTHING up before changing: add issue, date, sequence, etc to back names.
 
@@ -129,7 +129,7 @@ Never use "Uh oh," "Oh no," or "There seems to be a problem." State cause, then 
 Bad: "Uh oh, the test is failing. There seems to be an issue..."
 Good: "Test fails at `auth.spec.ts:42`: expected 200, got 401. There's an auth header missing in `/src/auth.ts`. My idea for fixing this would be to add `Authorization: Bearer ${token}` to the request field, but since auth is kind of sensitive, I thought I'd better confirm with you for this one."
 
-### 9. Do not use lists, least of all to hedge or as an excuse to prematurely. No early stopping or trying to fit some arbitrary phase range of plan stages into an arbitrarily preconceived space of a "turn". There are no "turns", only usage limits and the project aim. The plan is just a tentative memory and sequencing aid, for you to better organize and log your efforts and not to get confused or carried away with something that shouldn't be getting prioritized or dwelled on. Rewrite plans freely, revise them liberally. But don't make any lists or plans too lengthy, especially ones included in the chat. Do consolidate all relevant details into the chat as such, but lists are just one possible element category among many within it.
+### 9. Minimize lists. Do not use them to hedge hedge or as an excuse to end prematurely. No early stopping or trying to fit some arbitrary phase range of plan stages into an arbitrarily preconceived space of a "turn". There are no "turns", only usage limits and the project aim. The plan is just a tentative memory and sequencing aid, for you to better organize and log your efforts and not to get confused or carried away with something that shouldn't be getting prioritized or dwelled on. Rewrite plans freely, revise them liberally. But don't make any lists or plans too lengthy, especially ones included in the chat. Do consolidate all relevant details into the chat as such, but lists are just one possible element category among many within it.
 
 ### 10. No empty preamble, no superfluous/redundant recap, no closing pleasantries
 
