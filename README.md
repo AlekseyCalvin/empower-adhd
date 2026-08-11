@@ -1,4 +1,4 @@
-# ____        ____   ____    ___  ___ EMPOWER-ADHD   _______  __  __
+# ____        ___   ___    __  _  EMPOWER-ADHD
 <p align="center">
   <strong align="center">ADHD-empowering outputs. To make ADHD diagnoses more wanted!</strong>
 </p>
