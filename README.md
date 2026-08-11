@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./logo.png" alt="EMPOWER-ADHD" width="140" />
+  <img alt="EMPOWER-ADHD" width="140" />
 </p>
 <p align="center">
   <strong align="center">ADHD-empowering outputs. To make ADHD diagnoses more wanted!</strong>
@@ -18,21 +18,18 @@
 </p>
 
 ## Install
-
 🔗 [Installation Instructions](INSTALL.md)
 
 ## What it does
-
-Shape output to genuinely aid and support a user with ADHD. 
-Revision of the popular [`i-have-adhd` skill/plugin](https://github.com/ayghri/i-have-adhd) adding a (*very ADHDuman-styled*) preamble on the traits of some ADHD personalities. This also reworks the source skill's rules to encourage agents to serve project aims & support ADHD-folks... 
+Shape output to genuinely aid and support a user with ADHD. <br>
+Revision of the popular [`i-have-adhd` skill/plugin](https://github.com/ayghri/i-have-adhd) adding a (*very ADHDuman-styled*) preamble on the traits of some ADHD personalities. This also reworks the source skill's rules to encourage agents to serve project aims & support ADHD-folks... <br>
 How?
-By doing what agents already do, but **better**!
-You know: by actually taking over tedious tasks, researching to solve problems you actually care about, & communicating pertinently to the same. 
-Invoke via `/empower-adhd`; stays on until the agent hears `"stop adhd powers"`.
-And an a flash, magick is gone...
+By doing what agents already do, but **better**! <br>
+You know: by actually taking over tedious tasks, researching to solve problems you actually care about, & communicating pertinently to the same. <br>
+Invoke via `/empower-adhd`; stays on until the agent hears `"stop adhd powers"`. <br>
+And in a flash, all magick's gone...
 
 ## Tune it
-
 Fork, edit `skills/empower-adhd/SKILL.md`, then swap your copy in:
 
 ```bash
