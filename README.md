@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="./logo.png" alt="i-have-adhd" width="140" />
+  <img src="./logo.png" alt="EMPOWER-ADHD" width="140" />
 </p>
 <p align="center">
-  <strong align="center">ADHD-friendly outputs. No ADHD diagnosis needed!</strong>
+  <strong align="center">ADHD-empowering outputs. To make ADHD diagnoses more wanted!</strong>
 </p>
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/github/license/ayghri/i-have-adhd?style=flat" alt="License"></a>
@@ -17,77 +17,36 @@
   <a href=".github/readme/README.ko.md" title="한국어" aria-label="한국어">🇰🇷</a>
 </p>
 
-
 ## Install
 
 🔗 [Installation Instructions](INSTALL.md)
 
 ## What it does
 
-A skill for your coding assistant that stops it from burying the answer. Action first. Steps numbered. No "Hope this helps!"
-
-
-## What changes
-
-
-<table>
-<tr>
-<td width="50%">
-
-## Before
-
-> Great question! Let me think about this. Your auth flow has a few moving pieces: the middleware, the token verification, and the cookie handling. Looking at `src/auth.ts`, the `verifyToken` function (around lines 42-58) seems to be using an older `jsonwebtoken` API. One approach would be to update the package and rewrite that function. After making the change, you'd want to run the auth tests to confirm nothing breaks. By the way, you might also want to look at your dependency versions overall. Hope this helps! Let me know if you want to dig deeper.
-
-</td>
-
-<td width="50%">
-
-## After
-
-> Run `npm install jsonwebtoken@latest`, then edit `src/auth.ts:42`.
->
-> 1. Open `src/auth.ts`
-> 2. Replace `verifyToken` (lines 42–58) with the snippet below
-> 3. Run `npm test -- auth.spec.ts`
->
-> Next: paste the first failing line if any test fails.
-
-</td>
-</tr>
-</table>
-
-
-## The rules
-
-10 rules. Full text in [SKILL.md](./skills/i-have-adhd/SKILL.md).
-
-1. Lead with the next action.
-2. Number multi-step tasks.
-3. End with one concrete next step.
-4. Suppress tangents.
-5. Restate state every turn.
-6. Specific time estimates (minutes, not "a bit").
-7. Make wins visible.
-8. Matter-of-fact errors.
-9. Cap lists at 5 items.
-10. No preamble. No recap. No closers.
+Shape output to genuinely aid and support a user with ADHD. 
+Revision of the popular [`i-have-adhd` skill/plugin](https://github.com/ayghri/i-have-adhd) adding a (*very ADHDuman-styled*) preamble on the traits of some ADHD personalities. This also reworks the source skill's rules to encourage agents to serve project aims & support ADHD-folks... 
+How?
+By doing what agents already do, but **better**!
+You know: by actually taking over tedious tasks, researching to solve problems you actually care about, & communicating pertinently to the same. 
+Invoke via `/empower-adhd`; stays on until the agent hears `"stop adhd powers"`.
+And an a flash, magick is gone...
 
 ## Tune it
 
-Fork, edit `skills/i-have-adhd/SKILL.md`, then swap your copy in:
+Fork, edit `skills/empower-adhd/SKILL.md`, then swap your copy in:
 
 ```bash
-claude plugin uninstall i-have-adhd            # drop the upstream copy first:
-claude plugin marketplace remove i-have-adhd   # fork and upstream share both names
-claude plugin marketplace add <your-username>/i-have-adhd
-claude plugin install i-have-adhd@i-have-adhd
+claude plugin uninstall empower-adhd            # drop the upstream copy first:
+claude plugin marketplace remove empower-adhd   # fork and upstream share both names
+claude plugin marketplace add <your-username>/empower-adhd
+claude plugin install empower-adhd@empower-adhd
 ```
 
-Restart Claude Code, then re-invoke `/i-have-adhd`.
+Restart Claude Code, then re-invoke `/empower-adhd`.
 
 ## Credits
 
-Loosely based on *The Adult ADHD Tool Kit* by J. Russell Ramsay and Anthony L. Rostain. Adapted for how an LLM should respond, not how a human should organize their day.
+The [original skill/plugin](https://github.com/ayghri/i-have-adhd) by [Ayoub Ghriss](https://github.com/ayghri) is based on *The Adult ADHD Tool Kit* by J. Russell Ramsay and Anthony L. Rostain. Adapted for how an LLM should respond, not how a human should organize their day.
 
 ## License
 
