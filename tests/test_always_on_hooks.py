@@ -71,9 +71,9 @@ class AlwaysOnHookTest(unittest.TestCase):
                 self.assertEqual("", result.stderr)
 
     def test_runtimes_strip_frontmatter_with_trailing_whitespace(self):
-        skill_path = self.plugin_root / "skills" / "i-have-adhd" / "SKILL.md"
+        skill_path = self.plugin_root / "skills" / "empower-adhd" / "SKILL.md"
         skill_path.write_text("---   \nname: fixture\n--- \t\nFixture body.\n")
-        (self.config_dir / ".i-have-adhd-always").touch()
+        (self.config_dir / ".empower-adhd-always").touch()
         outputs = {}
 
         for name, command in self.runtimes():
@@ -92,9 +92,9 @@ class AlwaysOnHookTest(unittest.TestCase):
         # An opening --- with no closing delimiter is not frontmatter. Keeping
         # the whole file beats injecting a banner that promises "the ruleset
         # below" followed by nothing.
-        skill_path = self.plugin_root / "skills" / "i-have-adhd" / "SKILL.md"
+        skill_path = self.plugin_root / "skills" / "empower-adhd" / "SKILL.md"
         skill_path.write_text("---\nname: fixture\nFixture body, fence never closed.\n")
-        (self.config_dir / ".i-have-adhd-always").touch()
+        (self.config_dir / ".empower-adhd-always").touch()
         outputs = {}
 
         for name, command in self.runtimes():
