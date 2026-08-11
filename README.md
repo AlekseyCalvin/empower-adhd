@@ -1,6 +1,4 @@
-<p align="center">
-  <img alt="EMPOWER-ADHD" width="140" />
-</p>
+# EMPOWER-ADHD
 <p align="center">
   <strong align="center">ADHD-empowering outputs. To make ADHD diagnoses more wanted!</strong>
 </p>
