@@ -1,14 +1,14 @@
 {
   "$schema": "https://www.schemastore.org/claude-code-marketplace.json",
-  "name": "i-have-adhd",
-  "description": "Shape Claude Code output for an ADHD reader. Action-first, numbered steps, no tangents.",
+  "name": "empower-adhd",
+  "description": "Shape Claude Code output to empower an ADHDumans. Reworking the source i-have-adhd skill's rules to encourage agents to serve project aims & support persons, such as by taking over tedious tasks, expediting research, & communicating pertinently.",
   "owner": {
-    "name": "Ayoub G."
+    "name": "Aleksey Calvin"
   },
   "plugins": [
     {
-      "name": "i-have-adhd",
-      "description": "Action-first, ADHD-friendly output shaping for Claude Code.",
+      "name": "empower-adhd",
+      "description": "Claude Code version of plugin to empower ADHDumans. Reworking the source i-have-adhd skill's rules to encourage agents to serve project aims & support persons, such as by taking over tedious tasks, expediting research, & communicating pertinently.",
       "source": "./",
       "category": "productivity"
     }
