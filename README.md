@@ -23,7 +23,7 @@
 Shape output to genuinely aid and support a user with ADHD. <br>
 Revision of the popular [`i-have-adhd` skill/plugin](https://github.com/ayghri/i-have-adhd) adding a (*very ADHDuman-styled*) preamble on the traits of some ADHD personalities. <br>
 This also reworks the source skill's rules to encourage agents to serve project aims & support ADHD-folks... <br>
-How?
+How so?! <br>
 By doing what agents already do, but **better**! <br>
 You know: by actually taking over tedious tasks, researching to solve problems you really care about (at the moment), & communicating pertinently to the same. <br>
 Invoke via `/empower-adhd`; stays on until the agent hears `"stop adhd powers"`. <br>
