@@ -12,19 +12,19 @@ const SKILL_PATH = join(
   EXTENSION_DIR,
   "..",
   "skills",
-  "i-have-adhd",
+  "empower-adhd",
   "SKILL.md",
 );
-const STATE_ENTRY_TYPE = "i-have-adhd-state";
-const RULES_MESSAGE_TYPE = "i-have-adhd-rules";
-const DISABLED_MESSAGE_TYPE = "i-have-adhd-disabled";
-const STATUS_KEY = "i-have-adhd";
-const DISABLE_CONFIRMATION = "ADHD mode disabled.";
-const STOP_PHRASES = new Set(["stop adhd mode", "normal mode"]);
+const STATE_ENTRY_TYPE = "empower-adhd-state";
+const RULES_MESSAGE_TYPE = "empower-adhd-rules";
+const DISABLED_MESSAGE_TYPE = "empower-adhd-disabled";
+const STATUS_KEY = "empower-adhd";
+const DISABLE_CONFIRMATION = "ADHD POWERS disabled.";
+const STOP_PHRASES = new Set(["stop adhd powers", "normal mode"]);
 const RULES_HEADER =
-  'ADHD MODE ACTIVE. The ruleset below applies to every response until turned off. "stop adhd mode" or "normal mode" turns it off for this session.';
+  'ADHD POWERS ACTIVE. The ruleset below applies to every response until turned off. "stop adhd powers" or "normal mode" turns it off for this session.';
 const DISABLED_NOTICE =
-  "ADHD MODE OFF. Ignore the i-have-adhd ruleset injected earlier in this conversation and return to your default response style.";
+  "ADHD POWERS OFF. Ignore the empower-adhd ruleset injected earlier in this conversation and return to your default response style.";
 
 type AdhdModeState = {
   enabled: boolean;
@@ -47,13 +47,13 @@ function loadRules(): string {
   } catch (error) {
     const reason = error instanceof Error ? error.message : String(error);
     throw new Error(
-      `Unable to load i-have-adhd rules from ${SKILL_PATH}: ${reason}`,
+      `Unable to load empower-adhd rules from ${SKILL_PATH}: ${reason}`,
     );
   }
 
   const rules = stripFrontmatter(content);
   if (!rules) {
-    throw new Error(`The i-have-adhd rules file is empty: ${SKILL_PATH}`);
+    throw new Error(`The empower-adhd rules file is empty: ${SKILL_PATH}`);
   }
 
   return rules;
@@ -101,7 +101,7 @@ function rulesAreInContext(ctx: ExtensionContext): boolean {
 
 export default function iHaveAdhdExtension(pi: ExtensionAPI) {
   const rules = loadRules();
-  const alwaysOnFlag = join(getAgentDir(), ".i-have-adhd-always");
+  const alwaysOnFlag = join(getAgentDir(), ".empower-adhd-always");
   let enabled = false;
 
   const updateStatus = (ctx: ExtensionContext): void => {
@@ -165,13 +165,13 @@ export default function iHaveAdhdExtension(pi: ExtensionAPI) {
   };
 
   pi.registerFlag("adhd", {
-    description: "Start with ADHD-friendly output enabled",
+    description: "Start with ADHD-empowered output enabled",
     type: "boolean",
     default: false,
   });
 
-  pi.registerCommand("i-have-adhd", {
-    description: "Toggle ADHD-friendly output for this session",
+  pi.registerCommand("empower-adhd", {
+    description: "Toggle ADHD-empowered output for this session",
     handler: async (args, ctx) => {
       const argument = args.trim().toLowerCase();
 
@@ -190,7 +190,7 @@ export default function iHaveAdhdExtension(pi: ExtensionAPI) {
         return;
       }
 
-      ctx.ui.notify("Usage: /i-have-adhd [on|off]", "warning");
+      ctx.ui.notify("Usage: /empower-adhd [on|off]", "warning");
     },
   });
 
@@ -199,7 +199,7 @@ export default function iHaveAdhdExtension(pi: ExtensionAPI) {
 
     // Keep the built-in skill command working as an alias without letting Pi
     // expand a second copy of the same rules into the conversation.
-    if (input === "/skill:i-have-adhd") {
+    if (input === "/skill:empower-adhd") {
       setEnabled(true, ctx);
       return { action: "handled" };
     }
