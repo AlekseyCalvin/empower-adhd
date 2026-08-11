@@ -1,4 +1,4 @@
-# /___ __ _._*_._ __ ___\ EMPOWER-ADHD
+# _/___ __ _._*_._ __ ___\_ EMPOWER-ADHD
 <p align="center">
   <strong align="center">ADHD-empowering outputs. To make ADHD diagnoses more wanted!</strong>
 </p>
