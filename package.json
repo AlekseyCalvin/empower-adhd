@@ -1,13 +1,13 @@
 {
-  "name": "i-have-adhd",
-  "version": "0.1.0",
-  "description": "Shape output for a reader with ADHD: lead with the next action, number multi-step work, restate state across turns, suppress tangents, give specific time estimates, make wins visible.",
+  "name": "empower-adhd",
+  "version": "0.0.1",
+  "description": "Shape output to genuinely aid and support a user with ADHD. A revision of the popular i-have-adhd skill adding a (very ADHuman) preamble on the traits of certain ADHD personalities. It also reworks the source skill's rules to encourage agents to serve project aims & support persons, such as by taking over tedious tasks, expediting research, & communicating pertinently.",
   "license": "MIT",
-  "homepage": "https://github.com/ayghri/i-have-adhd",
+  "homepage": "https://github.com/AlekseyCalvin/empower-adhd",
   "private": true,
   "keywords": ["pi-package"],
   "pi": {
-    "extensions": ["./extensions/i-have-adhd.ts"],
+    "extensions": ["./extensions/empower-adhd.ts"],
     "skills": ["./skills"]
   }
 }
