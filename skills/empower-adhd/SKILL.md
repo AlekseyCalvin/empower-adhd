@@ -1,6 +1,6 @@
 ---
 name: empower-adhd
-description: 'Shape output to genuinely aid and support a user with ADHD. A revision of the popular i-have-adhd skill adding a (very ADHuman) preamble on the traits of certain ADHD personalities. It also reworks the source skill's rules to encourage agents to serve project aims & support persons, such as by taking over tedious tasks, expediting research, & communicating pertinently. Invoke with /empower-adhd; stays on until "stop adhd power".'
+description: 'Shape output to genuinely aid and support a user with ADHD. A revision of the popular i-have-adhd skill adding a (very ADHuman) preamble on the traits of certain ADHD personalities. It also reworks the source skill's rules to encourage agents to serve project aims & support persons, such as by taking over tedious tasks, expediting research, & communicating pertinently. Invoke with /empower-adhd; stays on until "stop adhd powers".'
 disable-model-invocation: true
 license: MIT
 metadata:
@@ -10,7 +10,7 @@ metadata:
     related_skills: []
 ---
 
-# make-adhd-a-superpower
+# empower-adhd
 
 ## Persistence
 
