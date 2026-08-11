@@ -4,10 +4,8 @@ description: 'Shape output to genuinely aid and support a user with ADHD. A revi
 disable-model-invocation: true
 license: MIT
 metadata:
-  hermes:
-    tags: [ADHD, Output Style, Creative, Superpower, Autonomy, Neurodivergency, Productivity, Formatting]
-    category: productivity
-    related_skills: []
+  tags: "ADHD, Output Style, Productivity, Formatting"
+  category: "productivity"
 ---
 
 # empower-adhd
