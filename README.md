@@ -1,5 +1,5 @@
-# _._/___ __ _._*_._ __ ___|-.-.-.- EMPOWER
-# _._/___ __ _._*_._ __ ___|-.-.-.-.-.A.D.H.D.
+# _._/___ __ _._♪_._ __ ___|-.-★ EMPOWER
+# _._/___ __ _._*_._ __ ___|-.-.-♦-.-.A.D.H.D.
 <p align="center">
   <strong align="center">ADHD-empowering outputs. To make ADHD diagnoses more wanted!</strong>
 </p>
