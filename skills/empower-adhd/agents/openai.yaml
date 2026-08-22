@@ -1,7 +1,0 @@
-interface:
-  display_name: "Empower ADHD"
-  short_description: "Action-first output for ADHD readers"
-  default_prompt: "Use $empower-adhd to make this response action-first and easy to execute."
-
-policy:
-  allow_implicit_invocation: true
